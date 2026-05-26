@@ -1,0 +1,60 @@
+{
+  "name": "timebase",
+  "description": "TimeBase plugin",
+  "version": "0.0.1",
+  "author": {
+    "name": "Deltix"
+  },
+  "userConfig": {
+    "timebase_url": {
+      "type": "string",
+      "title": "TimeBase URL",
+      "description": "TimeBase connection URL",
+      "required": true,
+      "default": "dxtick://localhost:8011"
+    },
+    "timebase_username": {
+      "type": "string",
+      "title": "Username",
+      "description": "Username for basic auth. Optional for OAuth2; when omitted, defaults to TIMEBASE_OAUTH2_CLIENT_ID"
+    },
+    "timebase_password": {
+      "type": "string",
+      "title": "Password",
+      "description": "Password for basic auth. Mutually exclusive with OAuth2 settings",
+      "sensitive": true
+    },
+    "timebase_oauth2_token_url": {
+      "type": "string",
+      "title": "OAuth2 token URL",
+      "description": "OAuth2 token endpoint for auth using the client credentials flow"
+    },
+    "timebase_oauth2_client_id": {
+      "type": "string",
+      "title": "OAuth2 client ID",
+      "description": "OAuth2 client ID"
+    },
+    "timebase_oauth2_client_secret": {
+      "type": "string",
+      "title": "OAuth2 client secret",
+      "description": "OAuth2 client secret",
+      "sensitive": true
+    },
+    "timebase_oauth2_scope": {
+      "type": "string",
+      "title": "OAuth2 scope",
+      "description": "Optional space-delimited OAuth2 scopes"
+    },
+    "timebase_oauth2_token_params": {
+      "type": "string",
+      "title": "OAuth2 token params",
+      "description": "Optional JSON object of extra OAuth2 token form parameters"
+    },
+    "mcp_log_level": {
+      "type": "string",
+      "title": "Log level",
+      "description": "Log verbosity: DEBUG, INFO, WARNING, ERROR, or CRITICAL",
+      "default": "INFO"
+    }
+  }
+}

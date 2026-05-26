@@ -1,0 +1,16 @@
+{
+  "name": "timebase-plugins",
+  "owner": {
+    "name": "Deltix"
+  },
+  "metadata": {
+    "description": "TimeBase plugins"
+  },
+  "plugins": [
+    {
+      "name": "timebase",
+      "source": "./",
+      "description": "TimeBase agent plugin"
+    }
+  ]
+}

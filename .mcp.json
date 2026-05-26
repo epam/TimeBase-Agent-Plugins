@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "timebase-mcp": {
+      "command": "timebase-mcp",
+      "env": {
+        "TIMEBASE_URL": "${user_config.timebase_url}",
+        "TIMEBASE_USERNAME": "${user_config.timebase_username}",
+        "TIMEBASE_PASSWORD": "${user_config.timebase_password}",
+        "TIMEBASE_OAUTH2_TOKEN_URL": "${user_config.timebase_oauth2_token_url}",
+        "TIMEBASE_OAUTH2_CLIENT_ID": "${user_config.timebase_oauth2_client_id}",
+        "TIMEBASE_OAUTH2_CLIENT_SECRET": "${user_config.timebase_oauth2_client_secret}",
+        "TIMEBASE_OAUTH2_SCOPE": "${user_config.timebase_oauth2_scope}",
+        "TIMEBASE_OAUTH2_TOKEN_PARAMS": "${user_config.timebase_oauth2_token_params}",
+        "MCP_LOG_LEVEL": "${user_config.mcp_log_level}"
+      }
+    }
+  }
+}

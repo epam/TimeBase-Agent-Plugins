@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "timebase-mcp": {
+      "command": "timebase-mcp",
+      "env": {
+        "TIMEBASE_URL": "dxtick://localhost:8011"
+      }
+    }
+  }
+}
