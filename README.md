@@ -101,6 +101,9 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 
 </details>
 
+> [!NOTE]
+> If you encounter issues with the MCP server, check out the [troubleshooting guide](https://github.com/epam/TimeBase-MCP#troubleshooting).
+
 ## Skills
 
 > [!WARNING]
