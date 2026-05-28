@@ -5,5 +5,5 @@
   "author": {
     "name": "Deltix"
   },
-  "mcpServers": "mcp.json"
+  "mcpServers": "./mcp.json"
 }

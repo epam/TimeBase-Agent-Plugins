@@ -56,5 +56,6 @@
       "description": "Log verbosity: DEBUG, INFO, WARNING, ERROR, or CRITICAL",
       "default": "INFO"
     }
-  }
+  },
+  "mcpServers": "./.claude-mcp.json"
 }
