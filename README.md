@@ -43,12 +43,12 @@ Clone this repository as a local plugin.
 
 macOS/Linux:
 ```bash
-git clone git@github.com:epam/TimeBase-Agent-Plugins.git ~/.cursor/plugins/local/timebase
+git clone https://github.com/epam/TimeBase-Agent-Plugins.git ~/.cursor/plugins/local/timebase
 ```
 
 Windows:
 ```bash
-git clone git@github.com:epam/TimeBase-Agent-Plugins.git %USERPROFILE%\.cursor\plugins\local\timebase
+git clone https://github.com/epam/TimeBase-Agent-Plugins.git %USERPROFILE%\.cursor\plugins\local\timebase
 ```
 
 Open `Cursor Settings > Plugins > TimeBase Plugin > TimeBase MCP` to edit configuration.  
@@ -62,7 +62,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 Open command palette (CMD+Shift+P / Ctrl+Shift+P), run `Chat: Install Plugin from Source`, then paste:
 
 ```text
-git@github.com:epam/TimeBase-Agent-Plugins.git
+https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
 In chat panel, click `Configure Tools`, hover `timebase-mcp`, then click `Configure TimeBase`.
@@ -76,7 +76,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 Open Claude Code and run the following commands:
 
 ```bash
-/plugin marketplace add git@github.com:epam/TimeBase-Agent-Plugins.git
+/plugin marketplace add https://github.com/epam/TimeBase-Agent-Plugins.git
 /plugin install timebase@timebase-plugins
 /reload-plugins
 ```
@@ -112,8 +112,7 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 
 ### Prerequisites
 
-1. **Node.js** installed (for `npx`).
-2. **Git access** to this repo from your machine.
+- **Node.js** installed (for `npx`).
 
 ### Installation
 
@@ -122,7 +121,7 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 Works for Claude Code, Cursor, VSCode and any other tool supporting the [Agent Skills](https://agentskills.io/home) open standard.
 
 ```bash
-npx skills add git@github.com:epam/TimeBase-Agent-Plugins.git
+npx skills add https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
 #### Manual installation
@@ -130,7 +129,7 @@ npx skills add git@github.com:epam/TimeBase-Agent-Plugins.git
 1. Clone this repository:
 
 ```bash
-git clone git@github.com:epam/TimeBase-Agent-Plugins.git
+git clone https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
 2. Copy the `/skills/qql-generator` directory into your tool's skills installation folder.
