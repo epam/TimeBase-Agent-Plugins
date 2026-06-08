@@ -42,11 +42,13 @@ timebase-mcp -v
 Clone this repository as a local plugin.
 
 macOS/Linux:
+
 ```bash
 git clone https://github.com/epam/TimeBase-Agent-Plugins.git ~/.cursor/plugins/local/timebase
 ```
 
 Windows:
+
 ```bash
 git clone https://github.com/epam/TimeBase-Agent-Plugins.git %USERPROFILE%\.cursor\plugins\local\timebase
 ```
@@ -104,6 +106,57 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 > [!NOTE]
 > If you encounter issues with the MCP server, check out the [troubleshooting guide](https://github.com/epam/TimeBase-MCP#troubleshooting).
 
+### Updating an existing plugin installation
+
+> [!IMPORTANT]
+> TimeBase MCP command needs to be updated separately using your package manager, see the [MCP documentation](https://github.com/epam/TimeBase-MCP#updating-an-existing-installation) for instructions.
+
+<details>
+<summary>Cursor</summary>
+
+If you cloned the plugin locally, pull the latest changes:
+
+macOS/Linux:
+
+```bash
+git -C ~/.cursor/plugins/local/timebase pull
+```
+
+Windows:
+
+```bash
+git -C %USERPROFILE%\.cursor\plugins\local\timebase pull
+```
+
+</details>
+
+<details>
+<summary>VSCode</summary>
+
+VS Code updates plugins automatically every 24 hours by default. To trigger an update manually, open command palette (CMD+Shift+P / Ctrl+Shift+P) and run `Extensions: Check for Extension Updates`.
+
+</details>
+
+<details>
+<summary>Claude Code</summary>
+
+Inside Claude Code session run:
+
+```bash
+/plugin
+```
+
+Navigate to the installed plugin and click `Update` button.
+
+</details>
+
+<details>
+<summary>Other tools</summary>
+
+Refer to your tool's documentation for updating plugins installed from a repository source.
+
+</details>
+
 ## Skills
 
 > [!WARNING]
@@ -132,11 +185,21 @@ npx skills add https://github.com/epam/TimeBase-Agent-Plugins.git
 git clone https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
-2. Copy the `/skills/qql-generator` directory into your tool's skills installation folder.
+2. Copy the desired `/skills/<skill-name>` directory into your tool's skills installation folder.
 
 ### Usage
 
 No special actions are required. Just ask your agent something about QQL.
+
+### Updating
+
+To update skills you already installed from this repository:
+
+```bash
+npx skills update
+```
+
+To install a newly added skill from this repository, run the installation command again or copy the new skill directory manually.
 
 ### Uninstallation
 
