@@ -11,6 +11,7 @@
         "TIMEBASE_OAUTH2_CLIENT_SECRET": "${user_config.timebase_oauth2_client_secret}",
         "TIMEBASE_OAUTH2_SCOPE": "${user_config.timebase_oauth2_scope}",
         "TIMEBASE_OAUTH2_TOKEN_PARAMS": "${user_config.timebase_oauth2_token_params}",
+        "DXAPI_SSL_TERMINATION": "${user_config.dxapi_ssl_termination}",
         "MCP_LOG_LEVEL": "${user_config.mcp_log_level}"
       }
     }

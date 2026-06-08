@@ -50,6 +50,11 @@
       "title": "OAuth2 token params",
       "description": "Optional JSON object of extra OAuth2 token form parameters"
     },
+    "dxapi_ssl_termination": {
+      "type": "boolean",
+      "title": "SSL termination",
+      "description": "Whether SSL termination is required when connecting to TimeBase"
+    },
     "mcp_log_level": {
       "type": "string",
       "title": "Log level",
