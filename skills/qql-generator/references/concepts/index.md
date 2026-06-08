@@ -35,6 +35,7 @@ Add the matching concept file for the failing construct:
 - `references/concepts/time-and-filtering.md`
 - `references/concepts/filters-and-predicates.md`
 - `references/concepts/operators-conditionals.md`
+- `references/concepts/stateless-functions.md` when the error is about an unknown or unsupported function, or when the user asks what functions the connected server supports.
 
 ### Work with polymorphic or PackageHeader data
 
@@ -81,6 +82,10 @@ Open:
 
 - the requested concept file from the list below,
 - `references/query-generation.md` for core syntax/invariants.
+
+If the question is specifically about available functions on the connected server, also open:
+
+- `references/concepts/stateless-functions.md`
 
 ### Optimize or explain query performance
 

@@ -101,8 +101,8 @@ Use for metadata discovery and debugging:
 - `symbols(streamKey)`
 - `spaces(streamKey)`
 - `typeOf(expr)`
-- `stateless_functions()`
-- `stateful_functions()`
+- `stateless_functions()` returns the stateless QQL functions supported by the connected TimeBase server.
+- `stateful_functions()` returns the stateful QQL functions supported by the connected TimeBase server.
 
 Example:
 
@@ -117,6 +117,27 @@ FROM "KRAKEN"
 ARRAY JOIN "entries" AS "entry"
 GROUP BY typeOf("entry")
 ```
+
+Server capability discovery example:
+
+```qql
+SELECT f.id, f.arguments.name, f.arguments.dataType.baseName
+ARRAY JOIN stateless_functions() AS f
+```
+
+## Function Discovery Workflow
+
+Use `stateless_functions()` and `stateful_functions()` as the first capability check when:
+
+- the user asks which QQL functions are available on the connected server,
+- a query repair flow hits an unknown or unsupported function error,
+- static docs and observed server behavior may differ across versions or editions.
+
+Guidance:
+
+- Prefer the connected server's reported function catalog over static references for availability questions.
+- Verify whether the missing function belongs to the stateless or stateful family before suggesting a replacement.
+- If a function is unavailable, propose a supported equivalent and note any semantic change.
 
 ## Composition Patterns
 
@@ -140,6 +161,7 @@ WHERE abs("offerPrice" - "bidPrice") > 0.5
 - Using `{}` with stateless functions.
 - Expecting stateless array `sum(arr)` to accumulate over time (it is per message only).
 - Confusing array functions (`size`) with string functions (`length`).
+- Assuming every documented function exists on every connected server without checking `stateless_functions()` or `stateful_functions()`.
 
 ## See Also
 

@@ -30,6 +30,7 @@ running metrics, moving average, OHLCV, VWAP, periodic snapshots, group by symbo
 
 - Use **stateless** functions for per-message expressions only.
 - Use **stateful** functions for cumulative/windowed calculations across messages.
+- For function availability checks on the connected server, see `references/concepts/stateless-functions.md`.
 
 Stateless example (per message):
 
@@ -150,6 +151,7 @@ See `references/concepts/stateless-functions.md`.
 - Expecting `TRIGGER` to reset state without explicit `RESET`.
 - Expecting `OVER TIME` output exactly at wall-clock boundaries when no source message arrives.
 - Combining `SELECT RUNNING` with `OVER OPEN TIME(...)`; use close/default time windows for running output.
+- Assuming a documented function is available on the connected server without checking the capability-discovery guidance in `references/concepts/stateless-functions.md` when availability is in doubt.
 
 ## See Also
 

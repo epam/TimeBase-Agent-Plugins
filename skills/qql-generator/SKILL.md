@@ -31,6 +31,7 @@ Generate QQL that is task-correct, schema-grounded, and safe to execute. Start f
   `Warning: TimeBase MCP is not available, results are expected to be significantly worse than MCP-grounded output.`
 - `compile_query` is parser-only (syntax/parse diagnostics). Compile success does **not** prove class/field/type or other semantic correctness.
 - `execute_query` is non-default and potentially mutating. Use it only when explicitly needed/requested by the user.
+- When the user asks which QQL functions are available, or a function call fails because the function may be unknown or unsupported on the connected server, inspect server capabilities with `stateless_functions()` and/or `stateful_functions()` before proposing a fix. Treat the connected server as the source of truth for availability.
 - Never invent final schema facts (classes, fields, enum values, entry types). Ask for schema or clearly mark assumptions.
 
 ## Style and Safety Rules
@@ -69,7 +70,7 @@ Use this map to fetch only what is needed:
 - `references/arrays-polymorphism.md`: PackageHeader/polymorphism/RECORD/UNION interactions.
 - `references/functions-windows.md`: stateful/stateless function behavior and emission semantics.
 - `references/concepts/stateful-functions.md`: stateful function families, argument patterns, and examples.
-- `references/concepts/stateless-functions.md`: stateless function families, internal functions, and examples.
+- `references/concepts/stateless-functions.md`: stateless function families, server functions capability discovery helpers, and examples.
 - `references/mcp-workflow.md`: MCP grounding flow, parser-only caveat, execute safety.
 - `references/concepts/index.md`: task-to-reference routing guide.
 - `references/concepts/constants-and-literals.md`: numeric/string/char/timestamp/interval constants.
