@@ -44,6 +44,30 @@ Use only when explicitly needed/requested:
 
 Do not use it as compile substitute.
 
+## QQL Function Discovery
+
+Use this flow when the user asks which QQL functions are available, or a query repair hits an unknown or unsupported function error.
+
+### Preferred: `list_qql_functions` (MCP v0.2.0+)
+
+When the tool is available, call it before proposing a fix or listing functions:
+
+- `list_qql_functions(kind="all")`: full catalog for both kinds.
+- `list_qql_functions(kind="stateless")` or `list_qql_functions(kind="stateful")`: one kind only.
+- `list_qql_functions(kind="stateful", function_id="SMA")`: exact function name and its overloads.
+
+The tool is read-only and returns grouped function ids, formatted signatures, and counts. Use `function_id` to narrow to one function when checking a specific call or overload set.
+
+### Fallback: older MCP server
+
+If `list_qql_functions` is not available on the installed MCP server, use QQL introspection on the connected server instead. See `references/concepts/stateless-functions.md` for the details.
+
+### Guidance
+
+- Prefer the connected server's reported catalog over static references for availability questions.
+- Verify whether the missing function belongs to the stateless or stateful family before suggesting a replacement.
+- If a function is unavailable, propose a supported equivalent and note any semantic change.
+
 ## Fallback Behavior (MCP Unavailable)
 
 If MCP is absent/unreachable:
