@@ -118,24 +118,37 @@ ARRAY JOIN "entries" AS "entry"
 GROUP BY typeOf("entry")
 ```
 
-Server capability discovery example:
+## Function Discovery Workflow
+
+Use connected-server discovery as the first capability check when:
+
+- the user asks which QQL functions are available on the connected server,
+- a query repair flow hits an unknown or unsupported function error,
+- static docs and observed server behavior may differ across versions or editions.
+
+### 1. Prefer `list_qql_functions` (TimeBase MCP v0.2.0+)
+
+Check out the `references/mcp-workflow.md` file for the details.
+
+### 2. Fallback for older MCP servers
+
+If `list_qql_functions` is not available, query the connected server with QQL introspection functions:
+
+- `stateless_functions()`: stateless catalog.
+- `stateful_functions()`: stateful catalog.
+
+The output of these functions is long, so try to narrow down the results via QQL filtering capabilities.
+
+Full server function capability discovery example:
 
 ```qql
 SELECT f.id, f.arguments.name, f.arguments.dataType.baseName
 ARRAY JOIN stateless_functions() AS f
 ```
 
-## Function Discovery Workflow
+### Guidance
 
-Use `stateless_functions()` and `stateful_functions()` as the first capability check when:
-
-- the user asks which QQL functions are available on the connected server,
-- a query repair flow hits an unknown or unsupported function error,
-- static docs and observed server behavior may differ across versions or editions.
-
-Guidance:
-
-- Prefer the connected server's reported function catalog over static references for availability questions.
+- Prefer the connected server's reported catalog over static references for availability questions.
 - Verify whether the missing function belongs to the stateless or stateful family before suggesting a replacement.
 - If a function is unavailable, propose a supported equivalent and note any semantic change.
 
@@ -161,7 +174,7 @@ WHERE abs("offerPrice" - "bidPrice") > 0.5
 - Using `{}` with stateless functions.
 - Expecting stateless array `sum(arr)` to accumulate over time (it is per message only).
 - Confusing array functions (`size`) with string functions (`length`).
-- Assuming every documented function exists on every connected server without checking `stateless_functions()` or `stateful_functions()`.
+- Assuming every documented function exists on every connected server without checking via `list_qql_functions` (or `stateless_functions()` / `stateful_functions()` on older MCP servers).
 
 ## See Also
 

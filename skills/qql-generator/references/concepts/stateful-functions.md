@@ -21,7 +21,7 @@ function{initArgs}(dynamicArgs)
 - `RESET OVER ...`: reset state at each period boundary.
 - `EVERY`: emit empty-period snapshots where supported.
 
-For connected-server function availability checks, see `references/concepts/stateless-functions.md`.
+For connected-server function availability checks, prefer `list_qql_functions` when available. See `references/concepts/stateless-functions.md` and `references/mcp-workflow.md`.
 
 ## Core Aggregates
 
@@ -272,7 +272,7 @@ Sample book outcomes:
 - Forgetting `GROUP BY symbol` for per-symbol isolated state.
 - Combining `SELECT RUNNING` with `OVER OPEN TIME(...)`; open-time aggregation is not running mode.
 - Treating parser success as semantic proof for field/class correctness.
-- Assuming every documented stateful function is available on the connected server without checking the capability-discovery guidance in `references/concepts/stateless-functions.md` when availability is in doubt.
+- Assuming every documented stateful function is available on the connected server without checking via `list_qql_functions` (or the capability-discovery guidance in `references/concepts/stateless-functions.md` on older MCP servers) when availability is in doubt.
 
 ## See Also
 

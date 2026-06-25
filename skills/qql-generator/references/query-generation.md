@@ -22,7 +22,7 @@ Use this file for building or repairing SELECT queries (including analytical que
 3. Resolve ambiguity (field/type) before adding derived logic.
 4. Add aggregation/windows/grouping only if required.
 5. If available, run `compile_query` and repair parser errors.
-6. If the problem is an unknown or unsupported function, inspect `stateless_functions()` and/or `stateful_functions()` on the connected server before rewriting the query.
+6. If the problem is an unknown or unsupported function, inspect server capabilities before rewriting the query. Prefer `list_qql_functions` when available. On older MCP servers fall back to `stateless_functions()` and/or `stateful_functions()`. See `references/mcp-workflow.md`.
 7. Keep semantic caveat explicit unless schema evidence confirms fields/types.
 
 ## SELECT Skeleton
@@ -198,7 +198,7 @@ OVER TIME(1ms)
 | SQL date literal syntax | Use QQL date literals like `'2026-05-14 00:00:00 GMT'd`. |
 | Using timestamp format `'2006-01-05T00:00:00 America/New_York'd` | Use `'2006-01-05 00:00:00 America/New_York'd`. |
 | Adding `symbol != ''` as filter | Omit it unless the user explicitly asks |
-| Unknown or unsupported function | Query `stateless_functions()` and/or `stateful_functions()` on the connected server, then use a supported equivalent that preserves stateless vs stateful semantics. |
+| Unknown or unsupported function | Prefer `list_qql_functions` when available; on older MCP servers query `stateless_functions()` and/or `stateful_functions()`, then use a supported equivalent that preserves stateless vs stateful semantics. |
 
 ## Parse vs Semantic Validity
 
