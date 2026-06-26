@@ -29,7 +29,8 @@ Prefer this workflow whenever the request depends on real TimeBase server contex
 - If the task needs QQL construction or repair, use the QQL generator skill.
 - If that skill is unavailable and MCP exposes query tools, prefer `compile_query` before `execute_query`.
 - Keep executions narrow and use sample outputs only when raw message examples are truly needed.
-- If the final result set is too large to sensibly return through MCP output or should be saved as a local artifact, use MCP for discovery and query narrowing first, then switch to Python for the actual read or export.
+- If iterative QQL drafting hits friction, stay in the QQL generator skill and keep using MCP query tools unless the output size, artifact, or client-side processing requirement changes.
+- If the final result set is too large to sensibly return through MCP output or should be saved as a local artifact, use MCP for discovery and query narrowing first, then switch to Python for the actual read, export, or post-processing.
 
 ## Failure handling
 

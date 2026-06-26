@@ -1,6 +1,6 @@
 ---
 name: timebase-python-client
-description: Use when generating, debugging, reviewing, repairing, or explaining TimeBase Python client code with dxapi or dxapi_ce, especially for pandas analysis, visualization-ready data prep, custom logic, data apps, and performance or reliability issues. Do not use this for pure MCP discovery or pure QQL tasks that can be solved without Python client code.
+description: Use when the user needs TimeBase Python client code, for example scripts, apps, services, local file export, large result extraction, pandas workflows, visualization prep, or downstream Python computation. Do not use for pure MCP discovery or pure QQL tasks answerable via QQL plus MCP without a Python artifact.
 ---
 
 # TimeBase Python Client
@@ -9,11 +9,23 @@ description: Use when generating, debugging, reviewing, repairing, or explaining
 
 Generate TimeBase Python client solutions that are connection-aware, schema-aware, install-aware, and maintainable, from one-off scripts to reusable services and applications. Prefer MCP-grounded discovery when it is available, but keep moving with clearly labeled assumptions and bundled examples when it is not.
 
+## Python Escalation Test
+
+Before using this skill, confirm Python materially changes the deliverable or execution environment. Python is valid when the user needs:
+
+- a Python script, app, service, or reusable component,
+- local file export,
+- large result extraction that is impractical to return through MCP output,
+- downstream Python computation, reshaping, visualization, or integration.
+
+Python is **not** valid when it would only connect and execute the same QQL and return the same result the agent could have provided directly via QQL plus MCP. QQL inside Python is appropriate when it narrows retrieval before saving, reshaping, computing, or feeding another component, not as a no-op wrapper around a direct answer.
+
 ## How to Route Requests
 
 1. Decide whether Python is required at all:
    - If MCP discovery can fully answer the request, do not use this skill.
    - If QQL plus MCP can fully answer the request without client-side logic and without forcing a large result through model context, do not use this skill.
+   - Do not escalate to Python just because QQL drafting was iterative or hit friction. Stay in the QQL generator skill unless the deliverable or scale requirement changes.
    - Continue when the user needs Python code, a reusable Python artifact, pandas or plotting preparation, client-runtime debugging, stateful stream logic, or a large bounded extract that should be written locally instead of returned through MCP output.
 2. Identify the request type:
    - generate or refactor code for a script, app, service, or reusable component,

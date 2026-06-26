@@ -1,6 +1,6 @@
 ---
 name: qql-generator
-description: Use when generating, reviewing, repairing, or explaining TimeBase QQL for diverse user goals.
+description: Use when generating, reviewing, repairing, explaining, or executing TimeBase QQL, including MCP-grounded query answers, and small result sets that can be returned directly. Prefer this over the Python client skill unless the user needs a Python artifact, local file export, large result extraction, or downstream Python post-processing.
 ---
 
 # QQL Generator
@@ -23,6 +23,10 @@ Generate QQL that is task-correct, schema-grounded, and safe to execute. Start f
    - start with one main workflow file,
    - add concept references only when needed,
    - use recipes only as compact starters.
+4. Decide whether Python is needed:
+   - Stay in this skill when the deliverable is QQL, a small MCP execution preview, or a direct answer from QQL plus MCP.
+   - Do not switch to the Python client skill when the final Python would only connect and execute the same QQL and return the same result.
+   - Escalate to Python only when the deliverable changes: local file persistence, large result extraction, reusable script, app/service, or downstream Python computation or visualization.
 
 ## Mandatory Policy
 
@@ -58,6 +62,7 @@ Before finalizing any answer, verify all applicable gates:
 4. If `compile_query` is available, parser diagnostics are addressed.
 5. Semantic uncertainty is surfaced (no false “validated” claims).
 6. For DDL or risky execution, explicit user intent is present.
+7. Python was not introduced without a real Python requirement such as local persistence, large result handling, reusable code, or post-processing.
 
 If a gate fails, output an assumption-labeled template or ask for missing schema instead of a false-final query.
 

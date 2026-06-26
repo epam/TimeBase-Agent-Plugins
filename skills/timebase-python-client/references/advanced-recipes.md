@@ -17,14 +17,16 @@ Start from `examples/parameterized-query.py`.
 
 ## QQL plus Python analysis
 
-Use when raw stream data is too large or needs server-side shaping.
+Use when raw stream data is too large, needs server-side shaping, or requires downstream Python work beyond a direct MCP answer.
 
 Pattern:
 
 1. Use the QQL skill to generate or repair the query text.
 2. Execute the query from Python.
-3. Convert the result into rows or a DataFrame.
-4. Export, visualize, or feed the result into an app component.
+3. Convert the result into rows or a DataFrame when the task needs local persistence or further processing.
+4. Save to file, export, visualize, compute, or feed the result into an app component.
+
+Do not use this pattern when Python would only execute the same QQL and return the same result that QQL plus MCP could have provided directly. QQL narrows retrieval; Python must add saving, reshaping, computation, visualization, or integration.
 
 ## Order book analysis
 
