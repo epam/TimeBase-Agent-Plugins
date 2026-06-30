@@ -89,6 +89,7 @@ Use this map to fetch only what is needed:
 - `references/concepts/keywords-and-shaping.md`: `WITH`, `TYPE`, `FIELD`, `RECORD`, `THIS`, `LIMIT`, `OFFSET`.
 - `references/concepts/inner-queries.md`: staged query patterns with subqueries in `FROM`.
 - `references/concepts/union.md`: SELECT UNION, stream UNION, fixed vs polymorphic output.
+- `references/concepts/materialized-views.md`: `CREATE/ALTER/DROP VIEW` syntax, OPTIONS (LIVE, AUTO_RESTART, OUTPUT_TYPE), and lifecycle commands (PAUSE/RESUME/REBUILD).
 - `references/recipes.md`: compact end-to-end patterns.
 
 ## Output Style

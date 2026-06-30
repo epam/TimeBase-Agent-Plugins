@@ -62,6 +62,7 @@ Open:
 Add when needed:
 
 - `references/concepts/data-types.md`
+- `references/concepts/materialized-views.md` when the request involves `CREATE VIEW`, `ALTER VIEW`, `DROP VIEW`, or continuous server-side query execution.
 
 ### Work with constants, predicates, or literals
 
@@ -135,3 +136,4 @@ Use:
 - `references/concepts/stateful-functions.md`
 - `references/concepts/stateless-functions.md`
 - `references/concepts/union.md`
+- `references/concepts/materialized-views.md`
