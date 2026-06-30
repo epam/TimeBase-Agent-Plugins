@@ -24,6 +24,9 @@ Use this for `CREATE`, `ALTER`, `MODIFY`, and `DROP STREAM`.
 | Add/rename/alter one field or class element | `ALTER STREAM` | Incremental change, lower blast radius. |
 | Rebuild many classes/enums/options | `MODIFY STREAM` | Full replacement is explicit and controlled. |
 | Remove stream/data | `DROP STREAM` | Destructive; requires explicit intent. |
+| Continuous server-side query persisting results | `CREATE VIEW` | Materialized view runs QQL on the server. |
+| Pause/resume/rebuild a running view | `ALTER VIEW` | Lifecycle management without schema changes. |
+| Remove a view | `DROP VIEW` | Destructive; requires explicit intent. |
 
 ## CREATE STREAM Workflow
 
@@ -313,3 +316,4 @@ If schema details or migration policy are incomplete:
 
 - `references/mcp-workflow.md` for execution safety and parser-vs-semantic caveats.
 - `references/concepts/data-types.md` when field conversions and precision changes are involved.
+- `references/concepts/materialized-views.md` for `CREATE/ALTER/DROP VIEW` syntax, OPTIONS, and lifecycle commands.
