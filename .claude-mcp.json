@@ -1,7 +1,12 @@
 {
   "mcpServers": {
     "timebase-mcp": {
-      "command": "timebase-mcp",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "timebase-mcp[all]==0.2.0rc2",
+        "timebase-mcp"
+      ],
       "env": {
         "TIMEBASE_URL": "${user_config.timebase_url}",
         "TIMEBASE_USERNAME": "${user_config.timebase_username}",
