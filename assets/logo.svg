@@ -1,0 +1,40 @@
+<svg width="71" height="71" viewBox="0 0 70.85 70.85" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="gradient-4" x1="544.94" y1="-1348.25" x2="561.97" y2="-1344.17" gradientTransform="rotate(31.52 -2156.571 -1572.208)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#00bcef"/>
+            <stop offset=".29" stop-color="#1997e3"/>
+            <stop offset=".57" stop-color="#2b7cd9"/>
+            <stop offset=".81" stop-color="#366cd4"/>
+            <stop offset="1" stop-color="#3a66d2"/>
+        </linearGradient>
+        <linearGradient id="gradient-7" x1="7.78" y1="14.87" x2="56.89" y2="63.99" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#00bcef"/>
+            <stop offset=".13" stop-color="#0ea7e8"/>
+            <stop offset=".35" stop-color="#218bde"/>
+            <stop offset=".57" stop-color="#2f76d8"/>
+            <stop offset=".79" stop-color="#376ad3"/>
+            <stop offset="1" stop-color="#3a66d2"/>
+        </linearGradient>
+        <linearGradient id="gradient-2" x1="855.23" y1="-1346.58" x2="921.19" y2="-1324.33" gradientTransform="rotate(161.36 349.774 -720.484)" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#00bcef"/>
+            <stop offset=".04" stop-color="#03b7ed"/>
+            <stop offset=".47" stop-color="#218bdf"/>
+            <stop offset=".8" stop-color="#3370d5"/>
+            <stop offset="1" stop-color="#3a66d2"/>
+        </linearGradient>
+        <linearGradient id="gradient-7-2" x1="972.65" y1="-482.15" x2="1001.92" y2="-452.88" gradientTransform="rotate(82 222.206 -765.17)" href="#gradient-7"/>
+        <linearGradient id="gradient-7-3" x1="349.18" y1="-67.69" x2="361.94" y2="-54.93" gradientTransform="rotate(-129.8 219.552 62.344)" href="#gradient-7"/>
+        <linearGradient id="gradient-4-2" x1="-196.14" y1="-1168.01" x2="-156.79" y2="-1156.26" gradientTransform="rotate(-116.63 300.128 -628.52)" href="#gradient-4"/>
+    </defs>
+    <rect width="70.85" height="70.85" fill="white"/>
+    <g id="layer-2" data-name="Layer 2">
+        <g id="layer-1" data-name="Layer 1">
+            <path d="M33.42 44.53a8.29 8.29 0 016.95-14.93 9 9 0 10-.76 15.94 8.27 8.27 0 01-6.19-1.01z" fill="url(#gradient-4)"/>
+            <path d="M42.17 64.23A32.49 32.49 0 019.68 31.75c0-15.4 13.31-27 27.69-30.33C18.1 1.74 0 16.14 0 35.47a35.38 35.38 0 0064.93 19.45 32.35 32.35 0 01-22.76 9.31z" fill="url(#gradient-7)"/>
+            <path d="M20 10.31a32.49 32.49 0 0127.5 58.4 35.37 35.37 0 10-46.07-42.3A32.35 32.35 0 0120 10.31z" fill="url(#gradient-2)"/>
+            <path d="M19.77 42.52a19.26 19.26 0 0116.4-21.75c9-1.27 17.5 5.42 20.65 13.59C55 23.07 44.54 13.8 33.18 15.39a21 21 0 00-6.07 39.73 19.21 19.21 0 01-7.34-12.6z" fill="url(#gradient-7-2)"/>
+            <path d="M40.37 31.38A8.29 8.29 0 0129 43.31a9 9 0 105.81-14.86 8.3 8.3 0 015.56 2.93z" fill="url(#gradient-7-3)"/>
+            <path d="M49.61 25.08a19.27 19.27 0 01-32 21 21 21 0 1021.02-30.59 19.21 19.21 0 0110.98 9.59z" fill="url(#gradient-4-2)"/>
+        </g>
+    </g>
+</svg>
