@@ -39,18 +39,10 @@ timebase-mcp -v
 <details>
 <summary>Cursor</summary>
 
-Clone this repository as a local plugin.
+Paste the following in an agent chat:
 
-macOS/Linux:
-
-```bash
-git clone https://github.com/epam/TimeBase-Agent-Plugins.git ~/.cursor/plugins/local/timebase
 ```
-
-Windows:
-
-```bash
-git clone https://github.com/epam/TimeBase-Agent-Plugins.git %USERPROFILE%\.cursor\plugins\local\timebase
+/add-plugin https://github.com/epam/TimeBase-Agent-Plugins
 ```
 
 Open `Cursor Settings > Plugins > TimeBase Plugin > TimeBase MCP` to edit configuration.  
