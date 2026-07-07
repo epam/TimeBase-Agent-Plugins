@@ -89,6 +89,21 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 </details>
 
 <details>
+<summary>Claude Desktop</summary>
+
+Open `Settings > Plugins > Add > Add Marketplace` add paste:
+
+```
+epam/TimeBase-Agent-Plugins
+```
+
+Press `Sync` button and wait for the plugin list to appear.
+
+Select `TimeBase` and click the `+` to install.
+
+</details>
+
+<details>
 <summary>Other tools</summary>
 
 This repository follows the [Open Plugin](https://open-plugins.com/) standard, so it can be used in any compatible tool.
