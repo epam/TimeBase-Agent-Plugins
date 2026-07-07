@@ -91,7 +91,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 <details>
 <summary>Claude Desktop</summary>
 
-Open `Settings > Plugins > Add > Add Marketplace` add paste:
+Open `Settings > Plugins > Add > Add Marketplace` and paste:
 
 ```
 epam/TimeBase-Agent-Plugins
