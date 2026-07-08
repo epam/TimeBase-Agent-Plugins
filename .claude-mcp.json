@@ -6,12 +6,17 @@
         "TIMEBASE_URL": "${user_config.timebase_url}",
         "TIMEBASE_USERNAME": "${user_config.timebase_username}",
         "TIMEBASE_PASSWORD": "${user_config.timebase_password}",
+        "TIMEBASE_HTTP_URL": "${user_config.timebase_http_url}",
         "TIMEBASE_OAUTH2_TOKEN_URL": "${user_config.timebase_oauth2_token_url}",
         "TIMEBASE_OAUTH2_CLIENT_ID": "${user_config.timebase_oauth2_client_id}",
         "TIMEBASE_OAUTH2_CLIENT_SECRET": "${user_config.timebase_oauth2_client_secret}",
         "TIMEBASE_OAUTH2_SCOPE": "${user_config.timebase_oauth2_scope}",
         "TIMEBASE_OAUTH2_TOKEN_PARAMS": "${user_config.timebase_oauth2_token_params}",
         "DXAPI_SSL_TERMINATION": "${user_config.dxapi_ssl_termination}",
+        "DXAPI_SSL_CERT_FILE": "${user_config.dxapi_ssl_cert_file}",
+        "DXAPI_SSL_TRUST_ALL": "${user_config.dxapi_ssl_trust_all}",
+        "MCP_HOST": "${user_config.mcp_host}",
+        "MCP_PORT": "${user_config.mcp_port}",
         "MCP_LOG_LEVEL": "${user_config.mcp_log_level}"
       }
     }

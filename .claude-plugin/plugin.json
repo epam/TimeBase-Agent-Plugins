@@ -29,6 +29,11 @@
       "description": "Password for basic auth. Mutually exclusive with OAuth2 settings",
       "sensitive": true
     },
+    "timebase_http_url": {
+      "type": "string",
+      "title": "TimeBase HTTP URL",
+      "description": "Optional TimeBase HTTP base URL override"
+    },
     "timebase_oauth2_token_url": {
       "type": "string",
       "title": "OAuth2 token URL",
@@ -59,6 +64,28 @@
       "type": "boolean",
       "title": "SSL termination",
       "description": "Whether SSL termination is required when connecting to TimeBase"
+    },
+    "dxapi_ssl_cert_file": {
+      "type": "file",
+      "title": "SSL certificate file",
+      "description": "Optional path to a DER certificate file"
+    },
+    "dxapi_ssl_trust_all": {
+      "type": "boolean",
+      "title": "Trust all SSL certificates",
+      "description": "Whether SSL certificate verification should be disabled"
+    },
+    "mcp_host": {
+      "type": "string",
+      "title": "MCP host",
+      "description": "Loopback host used for local interactive OAuth redirects",
+      "default": "127.0.0.1"
+    },
+    "mcp_port": {
+      "type": "string",
+      "title": "MCP port",
+      "description": "Loopback port used for local interactive OAuth redirects",
+      "default": "8000"
     },
     "mcp_log_level": {
       "type": "string",
