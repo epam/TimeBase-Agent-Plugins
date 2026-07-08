@@ -28,7 +28,7 @@ Paste the following in an agent chat:
 ```
 
 Open `Cursor Settings > Plugins > TimeBase Plugin > TimeBase MCP` to edit configuration.  
-Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#advanced-configuration).
+Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
 </details>
 
@@ -42,7 +42,7 @@ https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
 In chat panel, click `Configure Tools`, hover `timebase-mcp`, then click `Configure TimeBase`.
-Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#advanced-configuration).
+Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
 </details>
 
@@ -58,7 +58,7 @@ Open Claude Code and run the following commands:
 ```
 
 You will be prompted to configure MCP during installation.  
-Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#advanced-configuration).
+Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
 > [!WARNING]
 > On macOS there's an [upstream issue](https://github.com/anthropics/claude-code/issues/11927) with plugin configuration sometimes not being passed to the MCP. 
@@ -93,7 +93,7 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 </details>
 
 > [!NOTE]
-> If you encounter issues with the MCP server, check out the [troubleshooting guide](https://github.com/epam/TimeBase-MCP#troubleshooting).
+> If you encounter issues with the MCP server, check out the [troubleshooting guide](https://github.com/epam/TimeBase-MCP/blob/main/docs/troubleshooting.md).
 
 ### Updating an existing plugin installation
 
