@@ -21,10 +21,18 @@ uvx -V
 <details>
 <summary>Cursor</summary>
 
-Paste the following in an agent chat:
+Clone this repository as a local plugin.
 
+macOS/Linux:
+
+```bash
+git clone https://github.com/epam/TimeBase-Agent-Plugins.git ~/.cursor/plugins/local/timebase
 ```
-/add-plugin https://github.com/epam/TimeBase-Agent-Plugins
+
+Windows:
+
+```bash
+git clone https://github.com/epam/TimeBase-Agent-Plugins.git %USERPROFILE%\.cursor\plugins\local\timebase
 ```
 
 Open `Cursor Settings > Plugins > TimeBase Plugin > TimeBase MCP` to edit configuration.  
