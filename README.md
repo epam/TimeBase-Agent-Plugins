@@ -73,7 +73,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 > As a workaround, you can disable the plugin-managed MCP server from the `/plugin` menu and manually add it using the following command:
 > 
 > ```bash
-> claude mcp add timebase-mcp --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.0rc2' timebase-mcp
+> claude mcp add timebase-mcp --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.0' timebase-mcp
 > ```
 
 </details>
