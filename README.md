@@ -6,35 +6,17 @@ If you only need skills, jump to [Skills](#skills).
 
 ## Quickstart
 
-### 1. Install TimeBase MCP
+### 1. Install uv
 
-Community edition:
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) if `uvx` is not available.
 
-```bash
-uv tool install -p 3.14 --from "timebase-mcp[community]" timebase-mcp
-```
-
-Enterprise edition:
-
-> [!IMPORTANT]
-> Make sure to replace `<user>` and `<password>` with your Nexus credentials.
+Check that `uvx` is available in your shell:
 
 ```bash
-uv tool install -p 3.14 --index "https://<user>:<password>@nexus.deltixhub.com/repository/epm-rtc-public-python/simple" --from "timebase-mcp[enterprise]" timebase-mcp
+uvx -V
 ```
 
-If you prefer `pip`/`pipx` or another method, see the [TimeBase MCP installation docs](https://github.com/epam/TimeBase-MCP#installation).
-
-### 2. Verify MCP installation from a new terminal
-
-```bash
-timebase-mcp -v
-```
-
-> [!NOTE]
-> The MCP client launches the server automatically, but `timebase-mcp` must be discoverable in `PATH`.
-
-### 3. Install plugin in your tool
+### 2. Install plugin in your tool
 
 <details>
 <summary>Cursor</summary>
@@ -83,7 +65,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP#adva
 > As a workaround, you can disable the plugin-managed MCP server from the `/plugin` menu and manually add it using the following command:
 > 
 > ```bash
-> claude mcp add timebase-mcp --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- timebase-mcp
+> claude mcp add timebase-mcp --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.0' timebase-mcp
 > ```
 
 </details>
@@ -115,8 +97,7 @@ This repository follows the [Open Plugin](https://open-plugins.com/) standard, s
 
 ### Updating an existing plugin installation
 
-> [!IMPORTANT]
-> TimeBase MCP command needs to be updated separately using your package manager, see the [MCP documentation](https://github.com/epam/TimeBase-MCP#updating-an-existing-installation) for instructions.
+Updating the plugin updates the pinned TimeBase MCP version. You do not need to update TimeBase MCP separately.
 
 <details>
 <summary>Cursor</summary>
