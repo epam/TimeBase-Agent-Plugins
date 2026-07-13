@@ -147,6 +147,13 @@ Navigate to the installed plugin and click `Update` button.
 </details>
 
 <details>
+<summary>Claude Desktop</summary>
+
+Use the `Settings > Plugins > TimeBase > Update` button.
+
+</details>
+
+<details>
 <summary>Other tools</summary>
 
 Refer to your tool's documentation for updating plugins installed from a repository source.
