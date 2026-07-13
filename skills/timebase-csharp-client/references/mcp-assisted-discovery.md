@@ -17,6 +17,10 @@ Prefer this workflow whenever the request depends on real TimeBase server contex
    - Learn whether the requested period is plausible.
 5. `get_stream_symbols`
    - Confirm likely entity values before hardcoding them.
+6. Identify the `InstrumentType` before calling `Select`:
+   - Look up the `InstrumentType` in sample messages, loader code or ask the user.
+   - Use that value in `InstrumentKey`. Do not assume any default type.
+   - Wrong type may silently return zero rows at runtime.
 
 ## Required grounding
 

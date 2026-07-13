@@ -39,6 +39,7 @@ if (stream is null)
 
 var entities = new IInstrumentIdentity[]
 {
+    // Make sure the InstrumentType and symbol match the target data
     new InstrumentKey(InstrumentType.Custom, "GOOG")
 };
 
