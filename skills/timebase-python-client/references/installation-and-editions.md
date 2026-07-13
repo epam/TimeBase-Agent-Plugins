@@ -11,10 +11,8 @@ Use this reference when the client package is missing, the environment is ambigu
 
 ## Package names
 
-- Enterprise package name: `dxapi`, imported as `dxapi`
+- Enterprise package name: `dxapi-ee`, imported as `dxapi`
 - Community package name: `dxapi-ce`, imported as `dxapi_ce`
-
-In this workspace, the MCP server pins `dxapi` for enterprise and `dxapi-ce` for community in its dependency metadata.
 
 ## Best installation workflow
 
@@ -59,15 +57,16 @@ source .venv/bin/activate
 # community package name
 pip install dxapi-ce
 
-# enterprise package name, often from a private Nexus index
-pip install dxapi --extra-index-url https://<user>:<password>@nexus.deltixhub.com/repository/epm-rtc-public-python/simple
+# enterprise package name
+pip install dxapi-ee
 ```
 
 With `uv`:
 
 ```bash
 uv venv
-uv pip install dxapi-ce
+uv add dxapi-ce
+uv add dxapi-ee
 ```
 
 If the project already uses `uv`, `poetry`, or another manager, add the dependency there instead of teaching a one-off global `pip install` unless the user asked for a quick local test inside an existing venv.
