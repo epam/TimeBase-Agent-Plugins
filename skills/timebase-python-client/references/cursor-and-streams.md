@@ -20,7 +20,7 @@ Use direct cursors when ordering, polymorphism, live consumption, or incremental
 
 Do not use a cursor example as the routing default for discovery or simple bounded results that MCP or QQL can answer directly. A simple read is still a valid Python path when the expected result set is large enough that it should be streamed to a local file or processed outside model context.
 
-For explicit Python requests, start from `examples/read-stream.py` as a simple bounded-read script reference or as a base for richer cursor logic, `examples/polymorphic-read.py` for multi-type subscriptions, `examples/read-universal-stream.py` for package entries, `examples/multithread-read.py` for threaded readers, and `examples/multiplexed-cursor.py` for mixed feeds when support is confirmed.
+For explicit Python requests, start from [`examples/read-stream.py`](examples/read-stream.py) as a simple bounded-read script reference or as a base for richer cursor logic, [`examples/polymorphic-read.py`](examples/polymorphic-read.py) for multi-type subscriptions, [`examples/read-universal-stream.py`](examples/read-universal-stream.py) for package entries, [`examples/multithread-read.py`](examples/multithread-read.py) for threaded readers, and [`examples/multiplexed-cursor.py`](examples/multiplexed-cursor.py) for mixed feeds when support is confirmed. Use [`examples/list-streams.py`](examples/list-streams.py) when the task needs a Python-side stream listing instead of MCP `list_streams`, and [`examples/write-stream.py`](examples/write-stream.py) as the basic loader write pattern for self-contained stream creation.
 
 ## When this is better than pandas
 
@@ -37,6 +37,7 @@ Prefer `trySelect` as the default read pattern. The empty-subscription `createCu
 - Live reads should set expectations about unbounded execution and shutdown behavior.
 - Avoid turning live streams into DataFrames until the user has a bounded buffering strategy.
 - If live semantics matter and you do not know the stream behavior, do not invent it.
+- For an advanced reverse cursor read check out [`examples/latest-prices.py`](examples/latest-prices.py).
 
 ## Space-aware streams
 
@@ -51,7 +52,7 @@ Prefer `trySelect` as the default read pattern. The empty-subscription `createCu
 ## Schema-dependent logic
 
 - Inspect schema first for polymorphic streams, array fields, or object fields.
-- Use `examples/schema-introspection.py` before writing type-specific logic if the user did not provide schema details.
+- Use [`examples/schema-introspection.py`](examples/schema-introspection.py) before writing type-specific logic if the user did not provide schema details.
 - If MCP is available, prefer MCP schema discovery before hardcoding field assumptions.
 
 ## Threading and resource rules

@@ -100,31 +100,15 @@ If MCP is unavailable or fails, tell the user what is missing and continue with 
 
 Use this map to load only the needed local materials:
 
-- `references/workflow-selection.md`: choose between cursor iteration, pandas utilities, QQL plus Python, space-aware stream workflows, and visualization-ready pipelines.
-- `references/application-patterns.md`: structure reusable apps, services, and components instead of emitting one monolithic script.
-- `references/installation-and-editions.md`: decide when edition matters, install the right package, and verify what is actually installed.
-- `references/api-discovery.md`: how to find exact API details safely.
-- `references/pandas-analysis.md`: `read_frame`, `read_frame_dicts`, `bind_frame`, `write_frame`, filtering, field selection, DataFrame round trips, and space-aware write paths.
-- `references/cursor-and-streams.md`: `TickDb`, `TickCursor`, `TickStream`, polymorphic reads, space-aware selection, historical vs live consumption, and resource patterns.
-- `references/advanced-recipes.md`: parameterized queries, order book analysis, schema inspection, CSV export, and plotting-ready transforms.
-- `references/debugging-and-performance.md`: installation, connection, auth, edition mismatch, memory pressure, and repair workflow.
-- `references/mcp-assisted-discovery.md`: concrete MCP-first workflow and fallback behavior.
-- `references/examples/*`: bundled script references to adapt only after routing has already established that Python is necessary. They are not default replacements for MCP discovery or QQL-plus-MCP answers.
-- `references/examples/list-streams.py`: stream-listing script reference for explicit Python requests or MCP-unavailable fallback, not a default routing anchor for discovery.
-- `references/examples/read-stream.py`: simple bounded-read script reference for explicit Python requests or as a base for richer cursor logic, not a default routing anchor when QQL plus MCP is sufficient.
-- `references/examples/write-stream.py`: basic loader write pattern with self-contained stream creation.
-- `references/examples/basic-pandas-read.py`: compact filtered DataFrame read.
-- `references/examples/pandas-read-dicts.py`: Python-side DataFrame fallback when the native `read_frame` path is unstable.
-- `references/examples/latest-prices.py`: reverse cursor snapshot pattern for latest prices by symbol.
-- `references/examples/pandas-roundtrip.py`: DataFrame bind and write-back pattern.
-- `references/examples/parameterized-query.py`: query parameter pattern.
-- `references/examples/polymorphic-read.py`: multi-type cursor subscription pattern.
-- `references/examples/orderbook-analysis.py`: advanced transformation and export pattern.
-- `references/examples/read-universal-stream.py`: package-header and entry traversal for universal streams.
-- `references/examples/schema-introspection.py`: schema and type inspection pattern.
-- `references/examples/multithread-read.py`: one-database-per-worker cursor pattern.
-- `references/examples/visualize-bars.py`: plotting-ready historical DataFrame pattern.
-- `references/examples/multiplexed-cursor.py`: multiplexed cursor pattern when the installed client and server support it.
+- [`references/workflow-selection.md`](references/workflow-selection.md): choose between cursor iteration, pandas utilities, QQL plus Python, space-aware stream workflows, and visualization-ready pipelines.
+- [`references/application-patterns.md`](references/application-patterns.md): structure reusable apps, services, and components instead of emitting one monolithic script.
+- [`references/installation-and-editions.md`](references/installation-and-editions.md): decide when edition matters, install the right package, and verify what is actually installed.
+- [`references/api-discovery.md`](references/api-discovery.md): how to find exact API details safely.
+- [`references/pandas-analysis.md`](references/pandas-analysis.md): `read_frame`, `read_frame_dicts`, `bind_frame`, `write_frame`, filtering, field selection, DataFrame round trips, and space-aware write paths.
+- [`references/cursor-and-streams.md`](references/cursor-and-streams.md): `TickDb`, `TickCursor`, `TickStream`, polymorphic reads, space-aware selection, historical vs live consumption, and resource patterns.
+- [`references/advanced-recipes.md`](references/advanced-recipes.md): parameterized queries, order book analysis, schema inspection, CSV export, and plotting-ready transforms.
+- [`references/debugging-and-performance.md`](references/debugging-and-performance.md): installation, connection, auth, edition mismatch, memory pressure, and repair workflow.
+- [`references/mcp-assisted-discovery.md`](references/mcp-assisted-discovery.md): concrete MCP-first workflow and fallback behavior.
 
 ## Output Style
 

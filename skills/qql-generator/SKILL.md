@@ -70,27 +70,27 @@ If a gate fails, output an assumption-labeled template or ask for missing schema
 
 Use this map to fetch only what is needed:
 
-- `references/query-generation.md`: SELECT build/repair, ambiguous fields, aliasing, clause repairs.
-- `references/ddl-generation.md`: CREATE/ALTER/MODIFY/DROP workflow and confirm modes.
-- `references/arrays-polymorphism.md`: PackageHeader/polymorphism/RECORD/UNION interactions.
-- `references/functions-windows.md`: stateful/stateless function behavior and emission semantics.
-- `references/concepts/stateful-functions.md`: stateful function families, argument patterns, and examples.
-- `references/concepts/stateless-functions.md`: stateless function families, function discovery workflow, and examples.
-- `references/mcp-workflow.md`: MCP grounding flow, parser-only caveat, execute safety.
-- `references/concepts/index.md`: task-to-reference routing guide.
-- `references/concepts/constants-and-literals.md`: numeric/string/char/timestamp/interval constants.
-- `references/concepts/time-and-filtering.md`: timestamp literals, timezone assumptions, `WHERE` vs `HAVING`.
-- `references/concepts/filters-and-predicates.md`: `WHERE`, `BETWEEN`, `IN`, `LIKE`, null/NaN, type predicates.
-- `references/concepts/subscription-hints.md`: subscription pushdown rules for timestamp and symbol; when optimization applies and when it does not.
-- `references/concepts/arrays.md`: generic array mechanics (`ANY`/`ALL`, slicing, raw `ARRAY JOIN` usage).
-- `references/concepts/casts.md`: cast patterns and alias-vs-cast disambiguation.
-- `references/concepts/operators-conditionals.md`: operator semantics, `CASE`/`IF`, `.?` mask alignment behavior.
-- `references/concepts/data-types.md`: practical type constraints and mismatch handling.
-- `references/concepts/keywords-and-shaping.md`: `WITH`, `TYPE`, `FIELD`, `RECORD`, `THIS`, `LIMIT`, `OFFSET`.
-- `references/concepts/inner-queries.md`: staged query patterns with subqueries in `FROM`.
-- `references/concepts/union.md`: SELECT UNION, stream UNION, fixed vs polymorphic output.
-- `references/concepts/materialized-views.md`: `CREATE/ALTER/DROP VIEW` syntax, OPTIONS (LIVE, AUTO_RESTART, OUTPUT_TYPE), and lifecycle commands (PAUSE/RESUME/REBUILD).
-- `references/recipes.md`: compact end-to-end patterns.
+- [`references/query-generation.md`](references/query-generation.md): SELECT build/repair, ambiguous fields, aliasing, clause repairs.
+- [`references/ddl-generation.md`](references/ddl-generation.md): CREATE/ALTER/MODIFY/DROP workflow and confirm modes.
+- [`references/arrays-polymorphism.md`](references/arrays-polymorphism.md): PackageHeader/polymorphism/RECORD/UNION interactions.
+- [`references/functions-windows.md`](references/functions-windows.md): stateful/stateless function behavior and emission semantics.
+- [`references/concepts/stateful-functions.md`](references/concepts/stateful-functions.md): stateful function families, argument patterns, and examples.
+- [`references/concepts/stateless-functions.md`](references/concepts/stateless-functions.md): stateless function families, function discovery workflow, and examples.
+- [`references/mcp-workflow.md`](references/mcp-workflow.md): MCP grounding flow, parser-only caveat, execute safety.
+- [`references/concepts/index.md`](references/concepts/index.md): task-to-reference routing guide.
+- [`references/concepts/constants-and-literals.md`](references/concepts/constants-and-literals.md): numeric/string/char/timestamp/interval constants.
+- [`references/concepts/time-and-filtering.md`](references/concepts/time-and-filtering.md): timestamp literals, timezone assumptions, `WHERE` vs `HAVING`.
+- [`references/concepts/filters-and-predicates.md`](references/concepts/filters-and-predicates.md): `WHERE`, `BETWEEN`, `IN`, `LIKE`, null/NaN, type predicates.
+- [`references/concepts/subscription-hints.md`](references/concepts/subscription-hints.md): subscription pushdown rules for timestamp and symbol; when optimization applies and when it does not.
+- [`references/concepts/arrays.md`](references/concepts/arrays.md): generic array mechanics (`ANY`/`ALL`, slicing, raw `ARRAY JOIN` usage).
+- [`references/concepts/casts.md`](references/concepts/casts.md): cast patterns and alias-vs-cast disambiguation.
+- [`references/concepts/operators-conditionals.md`](references/concepts/operators-conditionals.md): operator semantics, `CASE`/`IF`, `.?` mask alignment behavior.
+- [`references/concepts/data-types.md`](references/concepts/data-types.md): practical type constraints and mismatch handling.
+- [`references/concepts/keywords-and-shaping.md`](references/concepts/keywords-and-shaping.md): `WITH`, `TYPE`, `FIELD`, `RECORD`, `THIS`, `LIMIT`, `OFFSET`.
+- [`references/concepts/inner-queries.md`](references/concepts/inner-queries.md): staged query patterns with subqueries in `FROM`.
+- [`references/concepts/union.md`](references/concepts/union.md): SELECT UNION, stream UNION, fixed vs polymorphic output.
+- [`references/concepts/materialized-views.md`](references/concepts/materialized-views.md): `CREATE/ALTER/DROP VIEW` syntax, OPTIONS (LIVE, AUTO_RESTART, OUTPUT_TYPE), and lifecycle commands (PAUSE/RESUME/REBUILD).
+- [`references/recipes.md`](references/recipes.md): compact end-to-end patterns.
 
 ## Output Style
 

@@ -32,7 +32,7 @@ Keep the same bounded inputs and switch the DataFrame construction path before r
 
 If `query` is provided, treat it as the source of truth for result shape.
 
-Start from `examples/basic-pandas-read.py` for the fast path. If you need the Python-side fallback, use `examples/pandas-read-dicts.py`.
+Start from [`examples/basic-pandas-read.py`](examples/basic-pandas-read.py) for the fast path. If you need the Python-side fallback, use [`examples/pandas-read-dicts.py`](examples/pandas-read-dicts.py).
 
 ## Write-back pattern
 
@@ -40,7 +40,7 @@ Start from `examples/basic-pandas-read.py` for the fast path. If you need the Py
 2. Use `pandas_utils.bind_frame(...)` to map DataFrame columns to the target stream.
 3. Write with `pandas_utils.write_frame(...)` only when the user explicitly wants stream output.
 
-Start from `examples/pandas-roundtrip.py`.
+Start from [`examples/pandas-roundtrip.py`](examples/pandas-roundtrip.py).
 
 ## Space-aware DataFrame workflows
 
@@ -65,7 +65,7 @@ Start from `examples/pandas-roundtrip.py`.
 - Sort or index by timestamp before plotting or resampling.
 - Keep timestamps and numeric columns clean before charting.
 
-Start from `examples/visualize-bars.py`.
+Start from [`examples/visualize-bars.py`](examples/visualize-bars.py).
 
 ## Common pitfalls
 

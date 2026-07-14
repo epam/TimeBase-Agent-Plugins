@@ -13,7 +13,7 @@ Pattern:
 3. Keep the query bounded and iterate the cursor.
 4. Convert the result into rows or a DataFrame only if the task needs it.
 
-Start from `examples/parameterized-query.py`.
+Start from [`examples/parameterized-query.py`](examples/parameterized-query.py).
 
 ## QQL plus Python analysis
 
@@ -37,13 +37,13 @@ There are two main approaches:
 
 Prefer the first path when the server can narrow the payload materially.
 
-Start from `examples/orderbook-analysis.py`.
+Start from [`examples/orderbook-analysis.py`](examples/orderbook-analysis.py).
 
 ## Schema introspection
 
 Inspect metadata before writing logic around assumed message types or nested fields.
 
-Start from `examples/schema-introspection.py`.
+Start from [`examples/schema-introspection.py`](examples/schema-introspection.py).
 
 ## Export and downstream integration
 
@@ -60,4 +60,4 @@ Prefer returning the transformed DataFrame or reusable function first. Add expor
 
 Multiplexed cursors are useful when the user explicitly needs one ordered consumer across multiple streams or mixed stream-plus-QQL subscriptions.
 
-Treat this as version-sensitive. Start from `examples/multiplexed-cursor.py` only when the installed client and server support are confirmed.
+Treat this as version-sensitive. Start from [`examples/multiplexed-cursor.py`](examples/multiplexed-cursor.py) only when the installed client and server support are confirmed.

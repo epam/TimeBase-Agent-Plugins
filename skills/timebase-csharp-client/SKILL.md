@@ -59,13 +59,12 @@ If MCP is unavailable, state what is missing and ask the user for stream/schema 
 
 ## Capability map
 
-- `references/workflow-selection.md`: routing table
-- `references/mcp-assisted-discovery.md`: MCP discovery order
-- `references/project-setup-and-nuget.md`: packages, feed, credentials, verification
-- `references/message-types-and-schema.md`: POCOs, introspector, `TypeLoader`
-- `references/cursor-and-streams.md`: connect, select, cursors, live, reverse reads
-- `references/qql-bound-queries.md`: `ExecuteQuery`, result POCOs
-- `references/authentication.md`: MSAL + `AccessToken`
-- `references/api-discovery.md`: API checks
-- `references/debugging-and-performance.md`: NuGet, binding, auth failures
-- `references/examples/*`: TimeBase API recipe fragments
+- [`references/workflow-selection.md`](references/workflow-selection.md): routing table
+- [`references/mcp-assisted-discovery.md`](references/mcp-assisted-discovery.md): MCP discovery order
+- [`references/project-setup-and-nuget.md`](references/project-setup-and-nuget.md): packages, feed, credentials, verification
+- [`references/message-types-and-schema.md`](references/message-types-and-schema.md): POCOs, introspector, `TypeLoader`
+- [`references/cursor-and-streams.md`](references/cursor-and-streams.md): connect, select, cursors, live, reverse reads
+- [`references/qql-bound-queries.md`](references/qql-bound-queries.md): `ExecuteQuery`, result POCOs
+- [`references/authentication.md`](references/authentication.md): MSAL + `AccessToken`
+- [`references/api-discovery.md`](references/api-discovery.md): API checks
+- [`references/debugging-and-performance.md`](references/debugging-and-performance.md): NuGet, binding, auth failures
