@@ -10,7 +10,7 @@
     {
       "name": "timebase",
       "source": "./",
-      "description": "TimeBase agent plugin"
+      "description": "Connect your AI agent to TimeBase, a high-performance database for financial market and other time-series data, via MCP tools and skills for QQL query and TimeBase client code generation."
     }
   ]
 }
