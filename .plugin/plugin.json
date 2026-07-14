@@ -1,6 +1,6 @@
 {
   "name": "timebase",
-  "description": "TimeBase plugin",
+  "description": "Connect your AI agent to TimeBase, a high-performance database for financial market and other time-series data, via MCP tools and skills for QQL query and TimeBase client code generation.",
   "version": "0.1.1",
   "author": {
     "name": "EPAM Systems"
@@ -9,6 +9,6 @@
   "homepage": "https://github.com/epam/TimeBase-Agent-Plugins",
   "repository": "https://github.com/epam/TimeBase-Agent-Plugins",
   "license": "Apache-2.0",
-  "keywords": ["timebase", "tb", "qql", "time-series", "db"],
+  "keywords": ["timebase", "time-series", "db", "qql", "financial-data"],
   "mcpServers": "./mcp.json"
 }
