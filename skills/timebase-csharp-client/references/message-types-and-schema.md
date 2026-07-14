@@ -129,7 +129,7 @@ while (cursor.Next())
 }
 ```
 
-Inspect schema before writing polymorphic logic. See `examples/schema-introspection.md`.
+Inspect schema before writing polymorphic logic. See [`examples/schema-introspection.md`](examples/schema-introspection.md).
 
 ## Common mistakes
 

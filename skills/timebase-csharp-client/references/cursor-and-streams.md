@@ -93,7 +93,7 @@ loader.Send(message);
 
 ## Live cursors
 
-Live consumption uses `SelectionOptions.Live = true` and `LiveCursorWatcher`. See `examples/live-cursor.md`. Dispose watcher and cursor on shutdown.
+Live consumption uses `SelectionOptions.Live = true` and `LiveCursorWatcher`. See [`examples/live-cursor.md`](examples/live-cursor.md). Dispose watcher and cursor on shutdown.
 
 ## Space-aware streams
 

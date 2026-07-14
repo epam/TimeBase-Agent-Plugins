@@ -64,7 +64,7 @@ The client does not refresh tokens automatically. For daemons and background wor
 2. Refresh before expiry with a safety buffer (for example 5 minutes).
 3. Update `db.AccessToken` with the new token.
 
-See `examples/oauth2.md` for a fuller pattern.
+See [`examples/oauth2.md`](examples/oauth2.md) for a fuller pattern.
 
 ## Common mistakes
 
