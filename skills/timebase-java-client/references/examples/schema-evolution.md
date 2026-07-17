@@ -45,7 +45,7 @@ public class BarMessageEx extends BarMessage {
 RecordClassDescriptor currentDescriptor = stream.getFixedType();
 RecordClassDescriptor extendedDescriptor = new RecordClassDescriptor(
     BarMessageEx.class.getName(), "Extended Bar", false,
-    currentDescriptor, // parent — the new type extends the current one
+    currentDescriptor, // parent, the new type extends the current one
     new NonStaticDataField("objectSize", "Object Size",
         new IntegerDataType(IntegerDataType.ENCODING_INT32, true))
 );

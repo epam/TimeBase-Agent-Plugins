@@ -34,4 +34,4 @@ for (DXTickStream stream : db.listStreams()) {
 }
 ```
 
-`getTimeRange()` returns `null` for an empty stream — check before formatting. `listEntities()` returns every distinct symbol currently in the stream, each as an `InstrumentIdentity`.
+`getTimeRange()` returns `null` for an empty stream, check before formatting. `listEntities()` returns every distinct symbol currently in the stream, each as an `InstrumentIdentity`.

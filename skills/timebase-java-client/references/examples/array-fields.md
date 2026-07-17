@@ -2,7 +2,7 @@
 
 **Type:** fragment, assumes a custom (raw) schema with an array-typed field.
 
-**When to use:** Encoding/decoding an array-typed field in a custom schema, or writing a generic debug-print helper over raw fields. See `array-fields-and-codecs.md` for the rationale.
+**When to use:** Encoding/decoding an array-typed field in a custom schema, or writing a generic debug-print helper over raw fields. See [`array-fields-and-codecs.md`](../array-fields-and-codecs.md) for the rationale.
 
 ## Schema: an array field
 

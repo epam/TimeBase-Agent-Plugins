@@ -34,11 +34,11 @@ try {
     try (TickCursor cursor = stream.select(Long.MIN_VALUE, new SelectionOptions())) {
         while (cursor.next()) {
             InstrumentMessage msg = cursor.getMessage().clone(); // deep copy before caching
-            cache.put(new InstrumentKey(msg.getInstrumentType(), msg.getSymbol()), msg);
+            cache.put(new ConstantInstrumentKey(msg.getInstrumentType(), msg.getSymbol()), msg);
         }
     }
 
-    // ... mutate cache in memory, e.g. cache.get(new InstrumentKey(InstrumentType.EQUITY, "MSFT")) ...
+    // ... mutate cache in memory, e.g. cache.get(new ConstantInstrumentKey(InstrumentType.EQUITY, "MSFT")) ...
 
     stream.clear();
 
@@ -85,7 +85,7 @@ static void move(DataType type, ReadableValue in, WritableValue out) {
 
 ```java
 while (decoder.nextField()) {
-    boolean encoderHasNext = encoder.nextField(); // always true here — same descriptor drives both
+    boolean encoderHasNext = encoder.nextField(); // always true here, same descriptor drives both
     String fieldName = decoder.getField().getName();
     if (!editField(idAndTime, type, fieldName, decoder, encoder)) {
         move(decoder.getField().getType(), decoder, encoder);

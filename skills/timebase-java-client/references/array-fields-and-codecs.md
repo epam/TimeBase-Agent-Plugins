@@ -4,11 +4,11 @@ Use this reference when a custom (raw, non-bound) schema has an array-typed fiel
 
 ## Schema: an array field
 
-`ArrayDataType(nullable, elementType)` — the element type can be any `DataType`, including another `ArrayDataType` or a `ClassDataType` (array of polymorphic objects).
+`ArrayDataType(nullable, elementType)`. The element type can be any `DataType`, including another `ArrayDataType` or a `ClassDataType` (array of polymorphic objects).
 
 ## Writing an array field (raw encode)
 
-Call `uenc.setArrayLength(n)` once, then `uenc.nextWritableElement()` per element written — the same pattern applies regardless of element type (skip `NaN` for a nullable `FloatDataType` element, `IntegerDataType.INT64_NULL` for a nullable integer element, etc.). `encoder.endWrite()` (an optional validation step — see `message-types-and-schema.md`) can be called once all fields are written, before extracting bytes for the message.
+Call `uenc.setArrayLength(n)` once, then `uenc.nextWritableElement()` per element written. The same pattern applies regardless of element type (skip `NaN` for a nullable `FloatDataType` element, `IntegerDataType.INT64_NULL` for a nullable integer element, etc.). `encoder.endWrite()` (an optional validation step, see `message-types-and-schema.md`) can be called once all fields are written, before extracting bytes for the message.
 
 ## Reading an array field (raw decode)
 
@@ -21,5 +21,5 @@ Two mutually-recursive helpers cover any raw field shape: one dumps a whole nest
 ## Common mistakes
 
 - Forgetting `uenc.setArrayLength(n)` before writing elements, or writing more/fewer elements than declared.
-- Not checking `type.getElementDataType().isNullable()` before skipping a `NaN`/null-sentinel value — skipping unconditionally corrupts the array length for non-nullable element types.
-- Assuming `decoder.getString()` is sufficient for array fields — it has "a little usefulness" for arrays (per the source comments); iterate `nextReadableElement()` and use type-specific getters instead.
+- Not checking `type.getElementDataType().isNullable()` before skipping a `NaN`/null-sentinel value. Skipping unconditionally corrupts the array length for non-nullable element types.
+- Assuming `decoder.getString()` is sufficient for array fields. It isn't reliable there, iterate `nextReadableElement()` and use type-specific getters instead.

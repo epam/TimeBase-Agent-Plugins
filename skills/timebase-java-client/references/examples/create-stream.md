@@ -46,3 +46,15 @@ StreamOptions options = StreamOptions.fixedType(
 
 DXTickStream stream = db.createStream(streamKey, options);
 ```
+
+## Delete before recreate (setup/demo code only)
+
+For setup/demo code that may be re-run against the same server, check for and delete an existing stream before recreating it, rather than letting `createStream` fail on a name collision. Only do this for setup/demo code the user controls, never delete a stream implicitly as a side effect of a read or write task:
+
+```java
+DXTickStream existing = db.getStream(streamKey);
+if (existing != null) {
+    existing.delete();
+}
+DXTickStream stream = db.createStream(streamKey, options);
+```

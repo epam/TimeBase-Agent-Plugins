@@ -34,7 +34,7 @@ try (TickLoader loader = stream.createLoader(options)) {
 }
 ```
 
-Fields must be written in the exact order they appear in the `RecordClassDescriptor`. `encoder.endWrite()` is an optional validation step (checks that non-nullable fields weren't skipped) — worth calling after the last field, but not required for the encoding itself to be correct.
+Fields must be written in the exact order they appear in the `RecordClassDescriptor`. `encoder.endWrite()` is an optional validation step, it checks that non-nullable fields weren't skipped, worth calling after the last field, but not required for the encoding itself to be correct.
 
 ## Read
 
@@ -45,7 +45,7 @@ import deltix.qsrv.hf.pub.md.NonStaticFieldInfo;
 import deltix.qsrv.hf.tickdb.pub.*;
 import deltix.util.memory.MemoryDataInput;
 
-SelectionOptions options = new SelectionOptions(true, false); // (raw, live) — convenience constructor
+SelectionOptions options = new SelectionOptions(true, false); // (raw, live)
 
 String[] types = { descriptor.getName() };
 

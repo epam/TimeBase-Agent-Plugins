@@ -17,11 +17,7 @@ void mapSymbols(MessageSource<InstrumentMessage> in, Map<Object, String> symbolM
     while (in.next()) {
         RawMessage inMsg = (RawMessage) in.getMessage();
 
-        // Reuse symbolKey instead of calling inMsg.getSymbol().toString(): getSymbol() may return a
-        // reusable CharSequence view rather than a String, and this loop runs once per copied message,
-        // so a per-message String allocation would matter at scale. CharSequenceKey implements
-        // content-based equals()/hashCode(), so it matches String-keyed map entries by symbol text
-        // without allocating — only its internal reference is swapped each iteration.
+        // reusable lookup key, see symbol-mapping-and-sync.md for why
         symbolKey.charSequence = inMsg.getSymbol();
         String newSymbol = symbolMap.get(symbolKey);
 

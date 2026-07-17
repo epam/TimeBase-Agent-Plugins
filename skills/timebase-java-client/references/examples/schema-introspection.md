@@ -2,7 +2,7 @@
 
 **Type:** fragment
 
-**When to use:** Runtime schema inspection in Java. Prefer MCP `get_stream_schema` for agent-side discovery; use this when the user needs Java descriptor traversal.
+**When to use:** Runtime schema inspection in Java. Prefer MCP `get_stream_schema` for agent-side discovery, use this when the user needs Java descriptor traversal.
 
 ```java
 import deltix.qsrv.hf.pub.md.DataField;
@@ -27,4 +27,4 @@ for (RecordClassDescriptor descriptor : metadata.getContentClasses()) {
 }
 ```
 
-`options.getMetaData()` (capital `D`) returns the stream's full schema as a `RecordClassSet`, covering both fixed-type and polymorphic streams uniformly. Use `getContentClasses()` (not `getClasses()`) to get `RecordClassDescriptor[]` directly — `getClasses()` returns the broader `ClassDescriptor[]` type.
+`options.getMetaData()` returns the stream's full schema as a `RecordClassSet`, covering both fixed-type and polymorphic streams uniformly. Use `getContentClasses()` (not `getClasses()`) to get `RecordClassDescriptor[]` directly, `getClasses()` returns the broader `ClassDescriptor[]` type.

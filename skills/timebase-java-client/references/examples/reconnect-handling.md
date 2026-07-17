@@ -1,6 +1,6 @@
 # Reconnect Handling
 
-**Type:** fragment, assumes a long-lived process (e.g. a background writer/reader service).
+**Type:** fragment, assumes an open, writable `DXTickDB` connection, an existing `DXTickStream`, and a constructed `InstrumentMessage` to send.
 
 **When to use:** The task needs to survive a mid-session disconnect from the TimeBase server, not just an initial connection failure.
 
@@ -55,17 +55,14 @@ public class ResilientWriter implements DisconnectEventListener {
         }
     }
 
-    public static void main(String[] args) throws Exception {
-        try (DXTickDB db = TickDBFactory.createFromUrl("dxtick://localhost:8011")) {
-            db.open(false);
-
-            ResilientWriter writer = new ResilientWriter();
-            ((Disconnectable) db).addDisconnectEventListener(writer);
-            try {
-                // writer.run(stream, msg);
-            } finally {
-                ((Disconnectable) db).removeDisconnectEventListener(writer);
-            }
+    // db is an already-open, writable DXTickDB connection
+    public static void wire(DXTickDB db, DXTickStream stream, InstrumentMessage msg) throws Exception {
+        ResilientWriter writer = new ResilientWriter();
+        ((Disconnectable) db).addDisconnectEventListener(writer);
+        try {
+            writer.run(stream, msg);
+        } finally {
+            ((Disconnectable) db).removeDisconnectEventListener(writer);
         }
     }
 }

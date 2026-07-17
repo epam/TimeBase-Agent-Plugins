@@ -2,7 +2,7 @@
 
 **Type:** fragment, assumes `db.isTopicDBSupported()` returned `true`.
 
-**When to use:** Ultra-low-latency pub/sub via Topics rather than durable streams. See `topics.md` for when this applies.
+**When to use:** Ultra-low-latency pub/sub via Topics rather than durable streams. See [`topics.md`](../topics.md) for when this applies.
 
 ## Create a topic
 
@@ -11,9 +11,11 @@ RecordClassDescriptor rcd = /* schema for the topic's message type */;
 try {
     db.getTopicDB().createTopic(topicKey, new RecordClassDescriptor[]{rcd}, null);
 } catch (DuplicateTopicException ignore) {
-    // topic already exists — fine to proceed
+    // topic already exists, fine to proceed
 }
 ```
+
+The last argument is `TopicSettings`, passing `null` uses the defaults, only construct a `TopicSettings` when a non-default publisher address or buffer size is actually needed.
 
 ## Publish
 
@@ -27,7 +29,9 @@ channel.send(msg);
 channel.close();
 ```
 
-## Consume: `MessagePoller` (recommended)
+### Consume
+
+## `MessagePoller` (recommended)
 
 ```java
 MessagePoller poller = db.getTopicDB().createPollingConsumer(topicKey, null);
@@ -40,7 +44,7 @@ while (!stopFlag.get()) {
 poller.close();
 ```
 
-## Consume: `MessageSource`-compatible
+## `MessageSource`-compatible
 
 ```java
 MessageSource<InstrumentMessage> source = db.getTopicDB().createConsumer(topicKey, null, new BusySpinIdleStrategy());
@@ -50,7 +54,7 @@ while (source.next()) {
 source.close();
 ```
 
-## Consume: background worker with a callback
+## Background worker with a callback
 
 ```java
 Disposable worker = db.getTopicDB().createConsumerWorker(topicKey, null, new BusySpinIdleStrategy(),

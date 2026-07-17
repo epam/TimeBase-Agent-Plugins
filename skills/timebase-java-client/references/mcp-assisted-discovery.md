@@ -16,10 +16,8 @@ Prefer this workflow whenever the request depends on real TimeBase server contex
 4. `get_stream_time_range`
    - Learn whether the requested period is plausible.
 5. `get_stream_symbols`
-   - Confirm likely entity values before hardcoding them.
-6. Confirm the exact symbol values before calling `select`:
-   - Look up real symbols via `get_stream_symbols` rather than guessing.
-   - For streams mixing instrument types, also confirm the `InstrumentType` (from sample messages, loader code, or the user) before constructing `InstrumentKey(InstrumentType, symbol)` entities; a plain symbol array is enough when the stream has one implicit type. Do not assume a default type or a symbol's existence.
+   - Look up real symbols before hardcoding them, don't guess.
+   - For streams mixing instrument types, also confirm the `InstrumentType` (from sample messages, loader code, or the user) before constructing `InstrumentKey(InstrumentType, symbol)` entities. A plain symbol array is enough when the stream has one implicit type. Do not assume a default type or a symbol's existence.
    - A wrong or non-existent symbol, or a mismatched type, may silently return zero rows at runtime.
 
 ## Required grounding

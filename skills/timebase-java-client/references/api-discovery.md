@@ -11,23 +11,9 @@ Use this reference when exact method names, overloads, or APIs must be confirmed
 5. Use a small compile probe when examples and dependency docs are insufficient.
 6. Ask for missing version or environment details rather than inventing APIs.
 
-## Project inspection
-
-```bash
-./gradlew dependencies
-```
-
-or
-
-```bash
-mvn dependency:tree
-```
-
-Confirm the resolved versions of `deltix-timebase-client` and `deltix-timebase-api-messages`.
-
 ## What to confirm
 
-- Whether advanced APIs (live cursor watchers, stream spaces, topics, schema evolution) exist in the resolved client version.
+- Whether APIs exist in the resolved client version and edition.
 - Java version compatibility with the chosen client version.
 
 ## Guardrails
@@ -35,4 +21,4 @@ Confirm the resolved versions of `deltix-timebase-client` and `deltix-timebase-a
 - Do not invent interfaces, properties, or overloads when dependency docs, bundled references, or compile checks can confirm them.
 - Prefer bundled examples, resolved dependency docs, and confirmed local project metadata over speculative APIs.
 - Prefer a compile probe over API archaeology when the question is whether a specific overload or member exists.
-- If the client dependencies are missing, load `project-setup-and-maven-gradle.md` first.
+- If the client dependencies are missing, load [`project-setup.md`](./project-setup.md) first.

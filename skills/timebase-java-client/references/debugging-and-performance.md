@@ -2,6 +2,8 @@
 
 Use this reference when setup, connection, binding, or performance fails.
 
+Examples below use the Enterprise Edition `deltix.*` package root. See the package-root mapping and edition differences in [`project-setup.md`](project-setup.md#package-roots-in-this-skills-examples) before applying these examples to a Community Edition project.
+
 ## Dependency and repository failures
 
 | Symptom | Likely cause | Check |
@@ -28,29 +30,7 @@ Report missing or incorrect repository credentials and point the user at env var
 
 ## Detecting and recovering from mid-session disconnects
 
-A `DXTickDB` connection can drop after it's already open (network blip, server restart) — this is different from a failed initial connection. Detect it with `DisconnectEventListener`, registered via the `Disconnectable` interface that connection implementations expose:
-
-```java
-import deltix.qsrv.hf.spi.conn.Disconnectable;
-import deltix.qsrv.hf.spi.conn.DisconnectEventListener;
-
-DisconnectEventListener listener = new DisconnectEventListener() {
-    @Override
-    public void onDisconnected() {
-        // pause writers/readers, or buffer, until reconnected
-    }
-
-    @Override
-    public void onReconnected() {
-        // resume
-    }
-};
-
-((Disconnectable) db).addDisconnectEventListener(listener);
-// ((Disconnectable) db).removeDisconnectEventListener(listener); when done
-```
-
-Only add this when the task is specifically about long-lived connection resilience (e.g. a background service) — a short-lived script doesn't need it. See [`examples/reconnect-handling.md`](examples/reconnect-handling.md) for a fuller pattern that pauses a loader loop while disconnected.
+A `DXTickDB` connection can drop after it's already open (network blip, server restart), this is different from a failed initial connection. Detect it with `DisconnectEventListener`, registered via the `Disconnectable` interface that connection implementations expose (`((Disconnectable) db).addDisconnectEventListener(listener)`). Only add this when the task is specifically about long-lived connection resilience (e.g. a background service), a short-lived script doesn't need it. See [`examples/reconnect-handling.md`](examples/reconnect-handling.md) for the full pattern that pauses a loader loop while disconnected and resumes on `onReconnected()`.
 
 ## Binding failures at runtime
 
@@ -76,7 +56,7 @@ Only add this when the task is specifically about long-lived connection resilien
 ## Live cursor issues
 
 - Ensure `SelectionOptions.live = true` and a correct start time.
-- Close the cursor on shutdown; if using a background-thread watcher, stop it explicitly too.
+- Close the cursor on shutdown. If using a background-thread watcher, stop it explicitly too.
 - Handle cancellation/interruption in background reader threads.
 
 ## Repair workflow

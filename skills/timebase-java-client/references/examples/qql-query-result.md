@@ -36,6 +36,6 @@ try (InstrumentMessageSource cursor = db.executeQuery(qql, options, symbol)) {
 }
 ```
 
-`options.typeLoader` binds the anonymous projection type QQL creates for `select close` to `CloseResult`, so its field is reachable as `msg.close` — without it, the projected value isn't accessible from the returned message. This is only needed for partial field lists; `select *` returns the underlying message type directly and doesn't need a `typeLoader`.
+`options.typeLoader` binds the anonymous projection type QQL creates for `select close` to `CloseResult`, so its field is reachable as `msg.close`. Without it, the projected value isn't accessible from the returned message. Only needed for partial field lists, `select *` returns the underlying message type directly and doesn't need a `typeLoader`.
 
-For queries spanning multiple streams or a time range, embed those filters in the QQL text (`(stream1 UNION stream2)`, `WHERE timestamp >= ...`) rather than using deprecated `executeQuery` overloads that take explicit stream/time arguments — see `qql-execution-from-java.md`.
+For queries spanning multiple streams or a time range, embed those filters in the QQL text (`(stream1 UNION stream2)`, `WHERE timestamp >= ...`) rather than using deprecated `executeQuery` overloads that take explicit stream/time arguments. See `qql-execution-from-java.md`.
