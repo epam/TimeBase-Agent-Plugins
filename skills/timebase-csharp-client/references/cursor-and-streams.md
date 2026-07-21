@@ -2,84 +2,9 @@
 
 Use direct cursors when ordering, typed messages, or incremental logic matters.
 
-## Connection bootstrap
+## Connect, resolve a stream, and select or write
 
-```csharp
-using Deltix.Timebase.Api;
-using Deltix.Timebase.Client;
-
-ITickDb? db = null;
-try
-{
-    db = TickDbFactory.CreateFromUrl(connectionUrl)
-        ?? throw new InvalidOperationException("TickDbFactory returned null.");
-    db.Open(readOnly: true);
-    // use db
-}
-finally
-{
-    db?.Dispose();
-}
-```
-
-## Resolve stream and select
-
-```csharp
-using Deltix.Timebase.Api;
-using Deltix.Timebase.Api.Communication;
-using Deltix.Timebase.Api.Messages;
-using Deltix.Timebase.Api.Utilities.Binding;
-
-var stream = db.GetStream(streamKey);
-if (stream is null)
-{
-    Console.WriteLine($"Stream '{streamKey}' not found.");
-    return;
-}
-
-var entities = new IInstrumentIdentity[]
-{
-    // Make sure the InstrumentType and symbol match the target data
-    new InstrumentKey(InstrumentType.Custom, "GOOG")
-};
-
-var typeName = typeof(BarMessage).FullName;
-var types = new[] { typeName };
-
-using var cursor = stream.Select(
-    DateTime.MinValue,
-    new SelectionOptions
-    {
-        Loader = new TypeLoader(typeof(BarMessage))
-    },
-    types,
-    entities);
-
-while (cursor.Next())
-{
-    var msg = cursor.GetMessage();
-    Console.WriteLine(msg);
-}
-```
-
-## Loader write
-
-```csharp
-var loadingOptions = new LoadingOptions
-{
-    Loader = new TypeLoader(typeof(BarMessage))
-};
-using var loader = stream.CreateLoader(loadingOptions);
-
-var message = new BarMessage
-{
-    Symbol = "AAPL",
-    Timestamp = DateTime.UtcNow,
-    OpenPrice = 100.0,
-    ClosePrice = 101.0
-};
-loader.Send(message);
-```
+Assumes an open `ITickDb` connection (see [`examples/connect-list-streams.md`](examples/connect-list-streams.md) for the connection bootstrap). For a resolved stream, typed read (with an entity/type filter) and typed write against it, see [`examples/read-write-bound.md`](examples/read-write-bound.md).
 
 ## Historical vs reverse reads
 
@@ -93,7 +18,7 @@ loader.Send(message);
 
 ## Live cursors
 
-Live consumption uses `SelectionOptions.Live = true` and `LiveCursorWatcher`. See [`examples/live-cursor.md`](examples/live-cursor.md). Dispose watcher and cursor on shutdown.
+Live consumption uses `SelectionOptions.Live = true` and `LiveCursorWatcher`. See [`examples/live-cursor.md`](examples/live-cursor.md). `LiveCursorWatcher` is not `IDisposable`. Call `watcher.Close()` and dispose the cursor separately on shutdown.
 
 ## Space-aware streams
 

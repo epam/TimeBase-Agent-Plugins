@@ -16,9 +16,11 @@ For projects with no user preference, use a conservative currently supported tar
 ## Required packages
 
 ```xml
-<PackageReference Include="Deltix.Timebase.Api" Version="5.6.14" />
-<PackageReference Include="Deltix.Timebase.Client" Version="5.6.14" />
+<PackageReference Include="Deltix.Timebase.Api" Version="<latest-version>" />
+<PackageReference Include="Deltix.Timebase.Client" Version="<latest-version>" />
 ```
+
+Don't hardcode a version, the client releases frequently. Use whatever is already pinned in the project, or ask the user to check the current release on the Deltix NuGet feed.
 
 ## NuGet feed
 
