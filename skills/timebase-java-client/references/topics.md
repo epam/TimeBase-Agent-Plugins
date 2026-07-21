@@ -22,7 +22,7 @@ Topics skip the TimeBase server process and route messages directly producer to 
 
 ## Topic types
 
-- `UDP_SINGLE_PUBLISHER`, the default, UDP transport, one producer per topic.
+- `UDP_SINGLE_PUBLISHER`, main API, UDP transport, one producer per topic. Requires an explicit `TopicSettings.setSinglePublisherUdpMode(address)` call, it is not chosen automatically.
 - `IPC`, inter-process communication, same machine only.
 - `MULTICAST`, experimental, needs UDP multicast network support.
 
@@ -42,3 +42,4 @@ Topics need a separate Aeron Media Driver process running on every machine that 
 - Not checking `isTopicDBSupported()` before calling `getTopicDB()`.
 - Choosing the `MessageSource`-compatible consumer purely out of familiarity when the polling consumer (`MessagePoller`) would better serve a latency-sensitive task, or when a dedicated CPU core isn't available for a blocking consumer.
 - Forgetting the Aeron Media Driver process or the server/client Aeron configuration, then being confused why Topics don't work at all.
+- Calling `MessagePoller.close()` from a different thread than the one running `MessagePoller.processMessages()`. They must run on the same thread.

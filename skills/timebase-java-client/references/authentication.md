@@ -34,7 +34,7 @@ try (DXTickDB db = TickDBFactory.createFromUrl(connectionUrl)) {
 | OAuth2 URL-embedded SSO | Yes | No |
 | OAuth2 browser login | Yes | No |
 
-Note: OAuth2 is available in the community edition since version 6.2.
+Note: OAuth2 is available on recent Community Edition releases (6.2+), check the target project's Community Edition version if OAuth2 support is in question.
 
 ## Username/password
 

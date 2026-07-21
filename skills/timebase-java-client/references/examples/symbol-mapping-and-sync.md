@@ -46,7 +46,7 @@ DXTickStream targetStream = db.createStream(targetKey, targetOptions);
 ## Synchronizing a target stream from a source
 
 ```java
-long[] getTimeRange(InstrumentIdentity id); // per-instrument overload, in addition to the whole-stream getTimeRange()
+long[] getTimeRange(InstrumentIdentity... entities); // varargs: no args for the whole-stream range, one id for a per-instrument range
 ```
 
 ```java

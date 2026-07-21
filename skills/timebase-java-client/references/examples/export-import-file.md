@@ -82,6 +82,7 @@ void exportToArchive(DXTickStream stream, RecordClassDescriptor[] descriptors, F
 
 ```java
 import deltix.qsrv.hf.tickdb.schema.*;
+import deltix.qsrv.hf.pub.md.SchemaUpdater;
 import deltix.timebase.api.ClassMappings;
 
 RecordClassDescriptor[] outTypes = stream.isFixedType()

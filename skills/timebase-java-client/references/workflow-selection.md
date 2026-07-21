@@ -28,10 +28,3 @@ Choose the narrowest TimeBase Java client workflow.
 | Stream metadata (periodicity, time range, entities) | stream management | `stream-management.md`, [`examples/stream-metadata.md`](examples/stream-metadata.md) |
 | Missing dependency or API uncertainty | setup + inspect | `project-setup.md`, `api-discovery.md` |
 | Broken TimeBase client code | triage | `debugging-and-performance.md` |
-
-## Playbook
-
-1. MCP-ground stream/schema when the task depends on live data.
-2. Prefer built-in message types when schema matches.
-3. Use raw (`RawMessage`) mode only for schemas without generated/bound classes.
-4. Hand off QQL design to the QQL generator skill, bind and execute in Java.
