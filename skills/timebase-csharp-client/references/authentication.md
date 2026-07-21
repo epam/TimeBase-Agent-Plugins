@@ -20,7 +20,16 @@ The .NET TimeBase client does not acquire OAuth2 tokens internally like some oth
 ```csharp
 using Deltix.Timebase.Api;
 using Deltix.Timebase.Client;
-using Microsoft.Identity.Client;
+using Microsoft.Identity.Client; // IdP may differ
+
+var authority = Environment.GetEnvironmentVariable("OAUTH2_AUTHORITY")
+    ?? throw new InvalidOperationException("OAUTH2_AUTHORITY required");
+var clientId = Environment.GetEnvironmentVariable("OAUTH2_CLIENT_ID")
+    ?? throw new InvalidOperationException("OAUTH2_CLIENT_ID required");
+var clientSecret = Environment.GetEnvironmentVariable("OAUTH2_CLIENT_SECRET")
+    ?? throw new InvalidOperationException("OAUTH2_CLIENT_SECRET required");
+var scopes = (Environment.GetEnvironmentVariable("OAUTH2_SCOPES") ?? "")
+    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
 var app = ConfidentialClientApplicationBuilder
     .Create(clientId)
@@ -35,6 +44,7 @@ var authResult = await app
 ITickDb? db = null;
 try
 {
+    // Username depends on TB server configuration, may be a client id, retrieved from the token, or provided by the user
     db = TickDbFactory.CreateFromUrl(timebaseUrl, username, null)
         ?? throw new InvalidOperationException("TickDbFactory returned null");
 
@@ -63,8 +73,6 @@ The client does not refresh tokens automatically. For daemons and background wor
 1. Track token expiry from MSAL `ExpiresOn`.
 2. Refresh before expiry with a safety buffer (for example 5 minutes).
 3. Update `db.AccessToken` with the new token.
-
-See [`examples/oauth2.md`](examples/oauth2.md) for a fuller pattern.
 
 ## Common mistakes
 

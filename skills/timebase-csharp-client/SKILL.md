@@ -40,6 +40,7 @@ Typical tasks:
 
 - Ground stream keys and schema from MCP or user input. Do not invent field names, type names, or stream keys.
 - Prefer built-in `Deltix.Timebase.Api.Messages` types when schema matches, do not invent custom POCOs unnecessarily.
+- Use `TypeLoader` for custom bound types and QQL result POCOs.
 - When QQL authoring is central, use the QQL generator skill first. Return here for C# execution and binding when the user supplies final QQL.
 - Use placeholder-based credentials in `NuGet.config` and preserve any existing naming convention the project already uses. Never hardcode Nexus credentials. If restore fails with 401, report that the configured credentials are missing or incorrect.
 - Keep `ITickDb` and cursor lifecycle explicit (`using` or `finally`).

@@ -4,14 +4,13 @@ Use this reference when generating bound message classes, creating streams, or c
 
 ## Bound message POCOs
 
-Custom messages inherit `InstrumentMessage` and use `[SchemaElement]` attributes:
+Custom messages inherit `InstrumentMessage` and use `[SchemaElement]` attributes. Name a custom POCO distinctly from any built-in type (e.g. `MyBarMessage`, not `BarMessage`) to avoid colliding with `Deltix.Timebase.Api.Messages.BarMessage`:
 
 ```csharp
 using Deltix.Timebase.Api;
-using Deltix.Timebase.Api.Messages;
 
-[SchemaElement(Name = "MyApp.Messages.BarMessage", Title = "Bar Message")]
-public class BarMessage : InstrumentMessage
+[SchemaElement(Name = "MyApp.Messages.MyBarMessage", Title = "My Bar Message")]
+public class MyBarMessage : InstrumentMessage
 {
     [SchemaElement(Name = "closePrice", Title = "Close Price")]
     public double ClosePrice { get; set; }
@@ -48,25 +47,7 @@ Do not claim every read path needs `TypeLoader`. Raw mode (`SelectionOptions.Raw
 
 ## Stream creation: introspector
 
-```csharp
-using Deltix.Timebase.Api;
-using Deltix.Timebase.Api.Communication;
-using Deltix.Timebase.Api.Utilities.Schema;
-
-var introspector = Introspector.CreateMessageIntrospector();
-var descriptor = introspector.IntrospectRecordClass(typeof(BarMessage));
-
-var options = new StreamOptions(
-    StreamScope.Durable,
-    "mybars",
-    "Bar Messages Stream",
-    StreamOptions.MaxDistribution);
-options.SetFixedType(descriptor);
-
-var stream = db.CreateStream("mybars", options);
-```
-
-Prefer introspection when a POCO already exists.
+Introspect an existing POCO (built-in or custom) with `Introspector.CreateMessageIntrospector().IntrospectRecordClass(...)`, then apply the resulting descriptor via `StreamOptions.SetFixedType(...)`. See [`examples/create-stream.md`](examples/create-stream.md) for the full pattern. Prefer introspection when a POCO already exists.
 
 ## Stream creation: explicit descriptor
 
@@ -85,8 +66,8 @@ var fields = new DataField[]
 };
 
 var descriptor = new RecordClassDescriptor(
-    "MyApp.Messages.BarMessage",
-    "Bar Message",
+    "MyApp.Messages.MyBarMessage",
+    "My Bar Message",
     false,
     null,
     fields);
