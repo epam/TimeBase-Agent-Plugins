@@ -1,6 +1,6 @@
 # TimeBase Agent Plugins
 
-TimeBase plugins for Cursor, VSCode, Claude Code, and any tool supporting the Open Plugin standard.
+TimeBase plugins for Cursor, VSCode, Claude Code, OpenAI Codex and any tool supporting the Open Plugin standard.
 
 If you only need skills, jump to [Skills](#skills).
 
@@ -94,6 +94,29 @@ Select `TimeBase` and click the `+` to install.
 </details>
 
 <details>
+<summary>OpenAI Codex</summary>
+
+From your terminal, run:
+
+```bash
+codex plugin marketplace add epam/TimeBase-Agent-Plugins
+codex plugin add timebase@timebase-plugins
+```
+
+Then start a new Codex instance so the plugin skills and MCP tools are loaded.
+
+The MCP server settings can be configured globally in `~/.codex/config.toml` or per project in `.codex/config.toml`:
+
+```toml
+[plugins."timebase@timebase-plugins".mcp_servers.timebase.env]
+TIMEBASE_URL = "dxtick://localhost:8011"
+```
+
+Check out the available [MCP configuration options](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
+
+</details>
+
+<details>
 <summary>Other tools</summary>
 
 This repository follows the [Open Plugin](https://open-plugins.com/) standard, so it can be used in any compatible tool.
@@ -150,6 +173,20 @@ Navigate to the installed plugin and click `Update` button.
 <summary>Claude Desktop</summary>
 
 Use the `Settings > Plugins > TimeBase > Update` button.
+
+</details>
+
+<details>
+<summary>OpenAI Codex</summary>
+
+Refresh the marketplace snapshot and reinstall the plugin:
+
+```bash
+codex plugin marketplace upgrade timebase-plugins
+codex plugin add timebase@timebase-plugins
+```
+
+Then restart any running Codex instances.
 
 </details>
 
