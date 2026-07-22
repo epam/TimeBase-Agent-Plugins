@@ -1,0 +1,20 @@
+{
+  "name": "timebase-plugins",
+  "interface": {
+    "displayName": "TimeBase Plugins"
+  },
+  "plugins": [
+    {
+      "name": "timebase",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

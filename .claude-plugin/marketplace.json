@@ -1,7 +1,7 @@
 {
   "name": "timebase-plugins",
   "owner": {
-    "name": "Deltix"
+    "name": "EPAM Systems"
   },
   "metadata": {
     "description": "TimeBase plugins"
