@@ -18,7 +18,10 @@ Choose the narrowest TimeBase Java client workflow.
 | Adding a field to an existing stream | schema change | `schema-evolution.md`, [`examples/schema-evolution.md`](examples/schema-evolution.md) |
 | Schema inspection in Java | descriptors | [`examples/schema-introspection.md`](examples/schema-introspection.md) |
 | Surviving mid-session server disconnects | reconnect handling | `debugging-and-performance.md`, [`examples/reconnect-handling.md`](examples/reconnect-handling.md) |
-| Bulk-updating a reference-data stream (e.g. securities) | lock + clear + rewrite | `locking-and-securities-update.md`, [`examples/locking-and-clear-rewrite.md`](examples/locking-and-clear-rewrite.md) |
+| Bulk-updating a reference-data stream (e.g. securities), whole stream fits in memory | lock + clear + rewrite | `locking-and-securities-update.md`, [`examples/locking-and-clear-rewrite.md`](examples/locking-and-clear-rewrite.md) |
+| Replacing or removing the message at a single known timestamp | delete narrow range + loader | `stream-management.md`, [`examples/delete-and-replace-message.md`](examples/delete-and-replace-message.md) |
+| Renaming or deleting a stream itself | stream lifecycle | `stream-management.md` |
+| Converting JSON to/from a TimeBase message | JSON conversion | `json-message-conversion.md`, [`examples/json-message-conversion.md`](examples/json-message-conversion.md) |
 | Stream partitioned into named spaces | space-scoped read/write | `stream-spaces.md`, [`examples/stream-spaces-read-write.md`](examples/stream-spaces-read-write.md) |
 | Bulk file export/import of a stream | archive read/write | `import-export.md`, [`examples/export-import-file.md`](examples/export-import-file.md) |
 | Copying a stream while remapping symbols, or syncing two instances | symbol map / sync | `symbol-mapping-and-sync.md`, [`examples/symbol-mapping-and-sync.md`](examples/symbol-mapping-and-sync.md) |

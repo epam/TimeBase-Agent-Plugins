@@ -6,6 +6,8 @@ Space names are round-tripped through a file-safe encoding when they appear in a
 
 When writing to many spaces one after another, defer `stream.createLoader(options)` per space until the first message for that space arrives, since loader creation has overhead. See the lazy per-space loader in [`examples/stream-spaces-read-write.md`](examples/stream-spaces-read-write.md).
 
+`stream.deleteSpaces(names...)` removes named spaces (and their data) entirely. `stream.renameSpace(newName, oldName)` renames one. Both are destructive/structural changes to the stream's space layout, confirm with the user before calling either.
+
 ## Common mistakes
 
 - Inventing space names instead of grounding them from MCP/user input or discovering them from `stream.listSpaces()`.

@@ -70,15 +70,16 @@ If MCP is unavailable, state what is missing and ask the user for stream/schema 
 - [`references/message-types-and-schema.md`](references/message-types-and-schema.md): POJOs, introspector, schema types
 - [`references/cursor-and-streams.md`](references/cursor-and-streams.md): select/cursor filters, dynamic resubscription, live and reversed reads, multi-stream select
 - [`references/loader-writes.md`](references/loader-writes.md): `TickLoader` writes, write modes, error handling
-- [`references/stream-management.md`](references/stream-management.md): stream creation, stream metadata
+- [`references/stream-management.md`](references/stream-management.md): stream creation, metadata, lifecycle, data removal
 - [`references/qql-execution-from-java.md`](references/qql-execution-from-java.md): `executeQuery`, bind parameters, embedded subscription
-- [`references/schema-evolution.md`](references/schema-evolution.md): schema change analysis and application (advanced)
-- [`references/locking-and-securities-update.md`](references/locking-and-securities-update.md): stream locking, no-in-place-update rewrite pattern (advanced)
-- [`references/stream-spaces.md`](references/stream-spaces.md): reading/writing named stream partitions (advanced)
-- [`references/import-export.md`](references/import-export.md): bulk file archive export/import (advanced)
-- [`references/symbol-mapping-and-sync.md`](references/symbol-mapping-and-sync.md): stream copy with symbol remapping, cross-instance sync (advanced)
-- [`references/array-fields-and-codecs.md`](references/array-fields-and-codecs.md): raw array-typed fields, custom debug printing (advanced)
-- [`references/topics.md`](references/topics.md): low-latency pub/sub as an alternative to durable streams (advanced)
+- [`references/schema-evolution.md`](references/schema-evolution.md): schema change analysis and application
+- [`references/locking-and-securities-update.md`](references/locking-and-securities-update.md): stream locking, bulk reference-data-stream rewrite pattern
+- [`references/json-message-conversion.md`](references/json-message-conversion.md): converting between JSON and a TimeBase message
+- [`references/stream-spaces.md`](references/stream-spaces.md): reading/writing named stream partitions
+- [`references/import-export.md`](references/import-export.md): bulk file archive export/import
+- [`references/symbol-mapping-and-sync.md`](references/symbol-mapping-and-sync.md): stream copy with symbol remapping, cross-instance sync
+- [`references/array-fields-and-codecs.md`](references/array-fields-and-codecs.md): raw array-typed fields, custom debug printing
+- [`references/topics.md`](references/topics.md): low-latency pub/sub as an alternative to durable streams
 - [`references/authentication.md`](references/authentication.md): connection entry points, username/password and OAuth2 setup, incl. Enterprise-only flows
 - [`references/api-discovery.md`](references/api-discovery.md): API checks
 - [`references/debugging-and-performance.md`](references/debugging-and-performance.md): build, connection, binding, and throughput failures

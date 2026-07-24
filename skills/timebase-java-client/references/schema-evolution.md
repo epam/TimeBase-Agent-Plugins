@@ -8,7 +8,7 @@ Examples use the Enterprise Edition `deltix.*` package root. See the package-roo
 
 Diff a "before" `RecordClassSet` (built from `stream.getFixedType()`) against an "after" set containing the new descriptor via `SchemaAnalyzer.DEFAULT.getChanges(...)`, then apply with `stream.execute(new SchemaChangeTask(change))`.
 
-`SchemaChangeTask` runs in the **background by default** (`background = true`). To block until the change completes instead, use `new SchemaChangeTask(change, false)`. Either way, `stream.getBackgroundProcess()` returns the active `BackgroundProcessInfo` (or `null` if none is running). Poll it if you need to confirm completion before proceeding, when running in background mode.
+`SchemaChangeTask` runs in the **background by default** (`background = true`). To block until the change completes instead, use `new SchemaChangeTask(change, false)`. Either way, `stream.getBackgroundProcess()` returns the active `BackgroundProcessInfo` (or `null` if none is running). Poll it if you need to confirm completion before proceeding, when running in background mode. `stream.abortBackgroundProcess()` cancels an in-progress background task (schema change or otherwise) if the user needs to stop it before completion.
 
 ## Worked example 1: adding new fields (extend a message type)
 

@@ -12,6 +12,8 @@ Prefer a reusable `CharSequenceKey` (from `deltix.util.collections`) over a plai
 
 Create the target stream by copying the source's `StreamOptions` (so the schema matches exactly) rather than redefining it.
 
+`stream.renameInstruments(from, to)` renames identities in place within a single stream (arrays of `InstrumentIdentity`, matched positionally), an alternative to the copy-while-remapping approach above when the rename should happen in the existing stream rather than producing a new one.
+
 ## Synchronizing a target stream from a source
 
 To bring a target stream up to date with a source stream (copy only the missing tail, per instrument), use the per-instrument time range overload `long[] getTimeRange(InstrumentIdentity id)` (in addition to the whole-stream `getTimeRange()`). Compute the earliest point that needs replaying across all instruments, then replay from there via `createCursor(null)` + `reset(...)` + `subscribeToAllEntities()`.
