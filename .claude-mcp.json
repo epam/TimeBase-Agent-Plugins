@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "timebase-mcp": {
+    "timebase": {
       "command": "uvx",
       "args": ["--from", "timebase-mcp[all]==0.2.0", "timebase-mcp"],
       "env": {
