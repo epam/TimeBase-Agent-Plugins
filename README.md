@@ -57,15 +57,14 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob
 <details>
 <summary>Claude Code</summary>
 
-Open Claude Code and run the following commands:
+Open a terminal and run:
 
 ```bash
-/plugin marketplace add https://github.com/epam/TimeBase-Agent-Plugins.git
-/plugin install timebase@timebase-plugins
-/reload-plugins
+claude plugin marketplace add epam/TimeBase-Agent-Plugins
+claude plugin install timebase@timebase-plugins
 ```
 
-You will be prompted to configure MCP during installation.  
+You will be able to configure MCP by running `/plugins` inside a Claude Code session, selecting the plugin under `Installed` and clicking `Configure options`.  
 Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
 > [!WARNING]
