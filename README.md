@@ -43,11 +43,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob
 <details>
 <summary>VSCode</summary>
 
-Use the following button:
-
-[![Install TimeBase plugin](https://img.shields.io/badge/VS_Code-TimeBase_Plugin-blue?style=flat-square)](vscode://chat-plugin/install?source=epam%2FTimeBase-Agent-Plugins)
-
-Or search for `@agentPlugins timebase` in the Extensions tab.
+Search for `@agentPlugins timebase` in the Extensions tab to install.
 
 For adjusting the settings open the chat panel, click `Configure Tools`, hover over `timebase-mcp`, then click `Configure TimeBase`.
 Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
