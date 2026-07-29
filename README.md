@@ -43,13 +43,13 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob
 <details>
 <summary>VSCode</summary>
 
-Open command palette (CMD+Shift+P / Ctrl+Shift+P), run `Chat: Install Plugin from Source`, then paste:
+Use the following button:
 
-```text
-https://github.com/epam/TimeBase-Agent-Plugins.git
-```
+[![Install TimeBase plugin](https://img.shields.io/badge/VS_Code-TimeBase_Plugin-blue?style=flat-square)](vscode://chat-plugin/install?source=epam%2FTimeBase-Agent-Plugins)
 
-In chat panel, click `Configure Tools`, hover `timebase-mcp`, then click `Configure TimeBase`.
+Or search for `@agentPlugins timebase` in the Extensions tab.
+
+For adjusting the settings open the chat panel, click `Configure Tools`, hover over `timebase-mcp`, then click `Configure TimeBase`.
 Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
 </details>
@@ -112,6 +112,33 @@ TIMEBASE_URL = "dxtick://localhost:8011"
 ```
 
 Check out the available [MCP configuration options](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
+
+</details>
+
+<details>
+<summary>GitHub Copilot CLI</summary>
+
+In your terminal, run:
+
+```bash
+copilot plugin install timebase@awesome-copilot
+```
+
+Then start a new Copilot CLI session so the plugin is loaded.
+
+Adjust the MCP server settings via `/mcp edit timebase-mcp` command. 
+Check out the available [MCP configuration options](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
+
+</details>
+
+<details>
+<summary>GitHub Copilot App</summary>
+
+Use the following button:
+
+[![Install TimeBase plugin](https://img.shields.io/badge/Install-TimeBase_Plugin-blue?logo=github&style=flat-square)](ghapp://plugins/marketplace/add?source=epam%2FTimeBase-Agent-Plugins)
+
+Or go to `Settings > Plugins` and search for `timebase`.
 
 </details>
 
@@ -186,6 +213,26 @@ codex plugin add timebase@timebase-plugins
 ```
 
 Then restart any running Codex instances.
+
+</details>
+
+<details>
+<summary>GitHub Copilot CLI</summary>
+
+In your terminal, run:
+
+```bash
+copilot plugin update timebase
+```
+
+Then restart any running Copilot CLI sessions.
+
+</details>
+
+<details>
+<summary>GitHub Copilot App</summary>
+
+Go to `Settings > Plugins`, find `timebase` and click `Update plugin` under the 3-dot menu.
 
 </details>
 
