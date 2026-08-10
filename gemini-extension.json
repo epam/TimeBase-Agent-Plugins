@@ -1,0 +1,96 @@
+{
+  "name": "timebase",
+  "version": "0.1.3",
+  "description": "Connect your AI agent to TimeBase, a high-performance database for financial market and other time-series data, via MCP tools and skills for QQL query and TimeBase client code generation.",
+  "settings": [
+    {
+      "name": "TimeBase URL",
+      "description": "Optional TimeBase native connection URL. When left unset, TimeBase MCP defaults to dxtick://localhost:8011.",
+      "envVar": "TIMEBASE_URL"
+    },
+    {
+      "name": "Username",
+      "description": "Optional username for basic auth or as an override for OAuth2 client credentials.",
+      "envVar": "TIMEBASE_USERNAME"
+    },
+    {
+      "name": "Password",
+      "description": "Optional password for basic auth. Mutually exclusive with OAuth2 client credentials.",
+      "envVar": "TIMEBASE_PASSWORD",
+      "sensitive": true
+    },
+    {
+      "name": "Read-only mode",
+      "description": "Optional flag to open TimeBase connections in read-only mode.",
+      "envVar": "TIMEBASE_READ_ONLY"
+    },
+    {
+      "name": "TimeBase HTTP URL",
+      "description": "Optional TimeBase HTTP API base URL override.",
+      "envVar": "TIMEBASE_HTTP_URL"
+    },
+    {
+      "name": "OAuth2 token URL",
+      "description": "Optional OAuth2 token endpoint for client credentials auth.",
+      "envVar": "TIMEBASE_OAUTH2_TOKEN_URL"
+    },
+    {
+      "name": "OAuth2 client ID",
+      "description": "Optional OAuth2 client ID.",
+      "envVar": "TIMEBASE_OAUTH2_CLIENT_ID"
+    },
+    {
+      "name": "OAuth2 client secret",
+      "description": "Optional OAuth2 client secret.",
+      "envVar": "TIMEBASE_OAUTH2_CLIENT_SECRET",
+      "sensitive": true
+    },
+    {
+      "name": "OAuth2 scope",
+      "description": "Optional space-delimited OAuth2 scopes.",
+      "envVar": "TIMEBASE_OAUTH2_SCOPE"
+    },
+    {
+      "name": "OAuth2 token params",
+      "description": "Optional JSON object of extra OAuth2 token form parameters.",
+      "envVar": "TIMEBASE_OAUTH2_TOKEN_PARAMS"
+    },
+    {
+      "name": "SSL termination",
+      "description": "Optional flag to enable SSL termination when connecting to TimeBase.",
+      "envVar": "DXAPI_SSL_TERMINATION"
+    },
+    {
+      "name": "SSL certificate file",
+      "description": "Optional path to a DER certificate file.",
+      "envVar": "DXAPI_SSL_CERT_FILE"
+    },
+    {
+      "name": "Trust all SSL certificates",
+      "description": "Optional flag to disable SSL certificate verification.",
+      "envVar": "DXAPI_SSL_TRUST_ALL"
+    },
+    {
+      "name": "MCP host",
+      "description": "Optional loopback host used for local interactive OAuth redirects.",
+      "envVar": "MCP_HOST"
+    },
+    {
+      "name": "MCP port",
+      "description": "Optional loopback port used for local interactive OAuth redirects.",
+      "envVar": "MCP_PORT"
+    },
+    {
+      "name": "Log level",
+      "description": "Optional log verbosity: DEBUG, INFO, WARNING, ERROR, or CRITICAL.",
+      "envVar": "MCP_LOG_LEVEL"
+    }
+  ],
+  "mcpServers": {
+    "timebase": {
+      "command": "uvx",
+      "args": ["--from", "timebase-mcp[all]==0.2.2", "timebase-mcp"],
+      "cwd": "${extensionPath}"
+    }
+  }
+}

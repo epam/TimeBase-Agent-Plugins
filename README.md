@@ -139,6 +139,27 @@ Or go to `Settings > Plugins` and search for `timebase`.
 </details>
 
 <details>
+<summary>Gemini CLI</summary>
+
+From your terminal, run:
+
+```bash
+gemini extensions install https://github.com/epam/TimeBase-Agent-Plugins
+```
+
+Then restart any pre-existing Gemini CLI sessions so the extension is loaded.
+
+Extension exposes the main [TimeBase MCP environment variables](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md) as install-time settings.
+
+To configure extension settings later, run:
+
+```bash
+gemini extensions config timebase
+```
+
+</details>
+
+<details>
 <summary>Other tools</summary>
 
 This repository follows the [Open Plugin](https://open-plugins.com/) standard, so it can be used in any compatible tool.
@@ -229,6 +250,19 @@ Then restart any running Copilot CLI sessions.
 <summary>GitHub Copilot App</summary>
 
 Go to `Settings > Plugins`, find `timebase` and click `Update plugin` under the 3-dot menu.
+
+</details>
+
+<details>
+<summary>Gemini CLI</summary>
+
+In your terminal, run:
+
+```bash
+gemini extensions update timebase
+```
+
+Then restart any running Gemini CLI sessions.
 
 </details>
 
