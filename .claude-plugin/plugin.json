@@ -29,6 +29,11 @@
       "description": "Password for basic auth. Mutually exclusive with OAuth2 settings",
       "sensitive": true
     },
+    "timebase_read_only": {
+      "type": "boolean",
+      "title": "Read-only mode",
+      "description": "Whether to open TimeBase connections in read-only mode"
+    },
     "timebase_http_url": {
       "type": "string",
       "title": "TimeBase HTTP URL",
