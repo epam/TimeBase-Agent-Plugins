@@ -89,7 +89,7 @@
   "mcpServers": {
     "timebase": {
       "command": "uvx",
-      "args": ["--from", "timebase-mcp[all]==0.2.2", "timebase-mcp"],
+      "args": ["--from", "timebase-mcp[all]==0.2.3", "timebase-mcp"],
       "cwd": "${extensionPath}"
     }
   }
