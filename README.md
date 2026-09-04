@@ -1,6 +1,6 @@
 # TimeBase Agent Plugins
 
-TimeBase plugins for Cursor, VSCode, Claude Code, OpenAI Codex and any tool supporting the Open Plugin standard.
+TimeBase plugins for Cursor, VSCode, Claude Code, OpenAI Codex, Gemini CLI, Antigravity CLI, and any tool supporting the Open Plugin standard.
 
 If you only need skills, jump to [Skills](#skills).
 
@@ -160,6 +160,21 @@ gemini extensions config timebase
 </details>
 
 <details>
+<summary>Antigravity CLI</summary>
+
+From your terminal, run:
+
+```bash
+agy plugin install https://github.com/epam/TimeBase-Agent-Plugins
+```
+
+Then start a new Antigravity CLI session so the plugin is loaded.
+
+Check out the available [TimeBase MCP environment variables](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md) for the full list of supported options.
+
+</details>
+
+<details>
 <summary>Other tools</summary>
 
 This repository follows the [Open Plugin](https://open-plugins.com/) standard, so it can be used in any compatible tool.
@@ -263,6 +278,13 @@ gemini extensions update timebase
 ```
 
 Then restart any running Gemini CLI sessions.
+
+</details>
+
+<details>
+<summary>Antigravity CLI</summary>
+
+Antigravity CLI doesn't have a built-in update command. To update the plugin, follow the installation instructions again.
 
 </details>
 
