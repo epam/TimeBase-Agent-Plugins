@@ -1,6 +1,6 @@
 ---
 name: qql-generator
-description: Use when generating, reviewing, repairing, explaining, or executing TimeBase QQL, including MCP-grounded query answers, and small result sets that can be returned directly. Prefer this over the Python client skill unless the user needs a Python artifact, local file export, large result extraction, or downstream Python post-processing.
+description: Use for TimeBase queries, views, stream schemas, and schema migrations. Generate, repair, review, or explain QQL and DDL, including creating or changing streams and views. Return small MCP-backed results directly, use the Python client skill when the task needs a script, local export, large result set, or Python processing.
 ---
 
 # QQL Generator
