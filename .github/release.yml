@@ -1,0 +1,41 @@
+changelog:
+  exclude:
+    labels:
+      - duplicate
+      - invalid
+      - question
+      - wontfix
+  categories:
+    - title: Breaking changes
+      labels:
+        - breaking
+    - title: General
+      labels:
+        - plugin:metadata
+    - title: QQL Generation Skill
+      labels:
+        - skill:qql-gen
+    - title: C++ Client Skill
+      labels:
+        - skill:cpp-client
+    - title: C# Client Skill
+      labels:
+        - skill:dotnet-client
+    - title: Java Client Skill
+      labels:
+        - skill:java-client
+    - title: Python Client Skill
+      labels:
+        - skill:py-client
+    - title: Features
+      labels:
+        - enhancement
+    - title: Fixes
+      labels:
+        - bug
+    - title: Documentation
+      labels:
+        - documentation
+    - title: Other changes
+      labels:
+        - "*"
