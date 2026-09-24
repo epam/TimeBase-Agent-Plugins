@@ -303,7 +303,7 @@ Refer to your tool's documentation for updating plugins installed from a reposit
 
 ### Prerequisites
 
-- **Node.js** installed (for `npx`).
+- **Node.js** installed for `npx skills`.
 
 ### Installation
 
@@ -315,15 +315,24 @@ Works for Claude Code, Cursor, VSCode and any other tool supporting the [Agent S
 npx skills add https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
+> [!WARNING]
+> Doesn't work for Claude Desktop, use the manual installation path below instead.
+
 #### Manual installation
 
-1. Clone this repository:
+Download the desired `<skill-name>.zip` from the [latest release](https://github.com/epam/TimeBase-Agent-Plugins/releases/latest).
+
+Claude Desktop accepts the ZIP directly. Open `Settings > Skills > Add > Upload skill`.
+
+For other tools, extract the ZIP and copy its `<skill-name>` directory into your tool's skills installation folder.
+
+You can also clone this repository instead of downloading a ZIP:
 
 ```bash
 git clone https://github.com/epam/TimeBase-Agent-Plugins.git
 ```
 
-2. Copy the desired `/skills/<skill-name>` directory into your tool's skills installation folder.
+Then copy `skills/<skill-name>` directory into your tool's skills installation folder.
 
 ### Usage
 
