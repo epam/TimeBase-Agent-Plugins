@@ -10,10 +10,17 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  NODE_VERSION: '24'
+  CLAUDE_CODE_VERSION: '2.1.280'
+  VALLY_VERSION: '0.12.0'
+  CURSOR_VALIDATOR_REV: '46216072ac5750f782f95bb325b4d12b7c3ae9c9'
+
 jobs:
   build:
     name: Validate and package skills
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     outputs:
       tag: ${{ steps.version.outputs.tag }}
       prerelease: ${{ steps.version.outputs.prerelease }}
@@ -73,6 +80,70 @@ jobs:
             echo "::error::GitHub release ${tag} already exists. Bump the version before releasing."
             exit 1
           fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install validators
+        id: validators
+        run: |
+          npm install --global --prefix "${RUNNER_TEMP}/validators" \
+            "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}" \
+            "@microsoft/vally-cli@${VALLY_VERSION}"
+          echo "${RUNNER_TEMP}/validators/bin" >> "${GITHUB_PATH}"
+          node --version
+          "${RUNNER_TEMP}/validators/bin/claude" --version
+          "${RUNNER_TEMP}/validators/bin/vally" --version
+
+      - name: Prepare Cursor validator
+        id: upstream-validators
+        run: |
+          curl --fail --silent --show-error --location --retry 3 --max-time 60 \
+            "https://raw.githubusercontent.com/cursor/plugin-template/${CURSOR_VALIDATOR_REV}/scripts/validate-template.mjs" \
+            --output "${RUNNER_TEMP}/validators/validate-template.mjs"
+
+      - name: Validate Cursor plugin and marketplace
+        id: cursor
+        run: node "${RUNNER_TEMP}/validators/validate-template.mjs"
+
+      - name: Validate Claude Code plugin manifest
+        id: claude-plugin
+        run: claude plugin validate .claude-plugin/plugin.json
+
+      - name: Validate Claude Code marketplace manifest
+        id: claude-marketplace
+        run: claude plugin validate .claude-plugin/marketplace.json
+
+      - name: Validate Claude Code skills
+        id: claude-skills
+        run: claude plugin validate skills
+
+      - name: Validate skill metadata and references with Vally
+        id: vally
+        run: vally lint ./skills --verbose
+
+      - name: Summarize validation
+        if: always()
+        run: |
+          cat >> "${GITHUB_STEP_SUMMARY}" <<'EOF'
+          ## Release validation
+
+          Configured versions: Node.js ${{ env.NODE_VERSION }}, Claude Code ${{ env.CLAUDE_CODE_VERSION }}, Vally CLI ${{ env.VALLY_VERSION }}, Cursor validator script `${{ env.CURSOR_VALIDATOR_REV }}`.
+
+          | Check | Result |
+          | --- | --- |
+          | Release version | ${{ steps.version.outcome }} |
+          | Validator installation | ${{ steps.validators.outcome }} |
+          | Validator script setup | ${{ steps.upstream-validators.outcome }} |
+          | Cursor plugin and marketplace | ${{ steps.cursor.outcome }} |
+          | Claude Code plugin manifest | ${{ steps.claude-plugin.outcome }} |
+          | Claude Code marketplace manifest | ${{ steps.claude-marketplace.outcome }} |
+          | Claude Code skills | ${{ steps.claude-skills.outcome }} |
+          | Vally skill metadata and references | ${{ steps.vally.outcome }} |
+
+          EOF
 
       - name: Package skills
         shell: bash
