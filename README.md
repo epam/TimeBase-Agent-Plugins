@@ -2,6 +2,8 @@
 
 TimeBase plugins for Cursor, VSCode, Claude Code, OpenAI Codex, Gemini CLI, Antigravity CLI, and any tool supporting the Open Plugin standard.
 
+Includes MCP tools and skills for QQL, TimeBase client development, WebAdmin integration, and troubleshooting.
+
 If you only need skills, jump to [Skills](#skills).
 
 ## Quickstart
@@ -68,7 +70,7 @@ Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob
 > As a workaround, you can disable the plugin-managed MCP server from the `/plugin` menu and manually add it using the following command:
 > 
 > ```bash
-> claude mcp add timebase --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.4' timebase-mcp
+> claude mcp add timebase --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.5' timebase-mcp
 > ```
 
 </details>
@@ -297,9 +299,9 @@ Refer to your tool's documentation for updating plugins installed from a reposit
 
 ## Skills
 
-> [!WARNING]
-> The **qql-generator** skill is built around grounding from **TimeBase MCP**. For task-correct, schema-backed QQL, run the agent with [TimeBase MCP](https://github.com/epam/TimeBase-MCP) configured.
-> Usage **without** MCP is **not recommended**, you are likely to get materially worse results.
+> [!NOTE]
+> The plugin includes the skills and TimeBase MCP. Installing skills separately does not install MCP.
+> QQL validation and live runtime inspection need a reachable TimeBase server. Troubleshooting with `search_logs_kb` requires TimeBase MCP 0.2.5 or later, but the bundled knowledge base can be searched without a live TimeBase connection.
 
 ### Prerequisites
 
