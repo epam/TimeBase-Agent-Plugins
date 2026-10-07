@@ -2,7 +2,7 @@
   "mcpServers": {
     "timebase": {
       "command": "uvx",
-      "args": ["--from", "timebase-mcp[all]==0.2.5", "timebase-mcp"],
+      "args": ["--from", "timebase-mcp[all]==0.2.6", "timebase-mcp"],
       "env": {
         "TIMEBASE_URL": "dxtick://localhost:8011"
       }

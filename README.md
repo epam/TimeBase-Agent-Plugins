@@ -65,14 +65,6 @@ claude plugin install timebase@timebase-plugins
 You will be able to configure MCP by running `/plugins` inside a Claude Code session, selecting the plugin under `Installed` and clicking `Configure options`.  
 Available options: [MCP configuration](https://github.com/epam/TimeBase-MCP/blob/main/docs/reference/environment-variables.md).
 
-> [!WARNING]
-> On macOS there's an [upstream issue](https://github.com/anthropics/claude-code/issues/11927) with plugin configuration sometimes not being passed to the MCP. 
-> As a workaround, you can disable the plugin-managed MCP server from the `/plugin` menu and manually add it using the following command:
-> 
-> ```bash
-> claude mcp add timebase --transport stdio --env TIMEBASE_URL='dxtick://localhost:8011' -- uvx --from 'timebase-mcp[all]==0.2.5' timebase-mcp
-> ```
-
 </details>
 
 <details>
