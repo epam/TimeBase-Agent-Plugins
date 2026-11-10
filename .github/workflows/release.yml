@@ -19,7 +19,7 @@ env:
 jobs:
   build:
     name: Validate and package skills
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 10
     outputs:
       tag: ${{ steps.version.outputs.tag }}
@@ -167,7 +167,7 @@ jobs:
 
   github-release:
     name: Create draft GitHub release
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     needs: build
     permissions:
       contents: write
