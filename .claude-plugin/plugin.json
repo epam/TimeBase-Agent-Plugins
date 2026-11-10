@@ -104,7 +104,7 @@
       "command": "uvx",
       "args": [
         "-p", "3.14",
-        "--from", "timebase-mcp[all]==0.2.7",
+        "--from", "timebase-mcp[all]==0.2.8",
         "timebase-mcp"
       ],
       "env": {
